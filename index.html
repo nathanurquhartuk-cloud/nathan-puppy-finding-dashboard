@@ -56,7 +56,7 @@
   .b-type{background:#eef2f7;color:var(--navy)}
   .b-rescue{background:#fff3d6;color:var(--gold)}
   .b-dec{background:#e6ecfb;color:#3554a5}
-  .b-xmas{background:#fff3d6;color:#8a5a00}
+  .b-xmas{background:#1f6b3a;color:#fff}
   .meta{display:grid;grid-template-columns:1fr 1fr;gap:5px 12px;font-size:.82rem}
   .meta div b{color:var(--accent)}
   .lineage{font-size:.78rem;color:var(--muted);line-height:1.45;border-left:3px solid var(--border);padding-left:9px}
@@ -88,7 +88,7 @@
 <header>
   <span class="logo">🐶</span>
   <h1>Nathan Puppy Finding Dashboard</h1>
-  <span class="datebadge">Research verified: 11 September 2026 · Target: December pickup</span>
+  <span class="datebadge">Research verified: 18 September 2026 · Target: December pickup</span>
   <p>English Bulldogs · Miniature Bulldogs · Australian Bulldogs — KC-registered breeders, marketplaces &amp; rescue centres across the UK</p>
 </header>
 
@@ -102,7 +102,7 @@
 
 <div class="filters" id="filterbar">
   <select id="fSort" onchange="render()">
-    <option value="">Sort: featured</option>
+    <option value="">Sort: featured (December-ready first)</option>
     <option value="price_desc">Price: high → low</option>
     <option value="price_asc">Price: low → high</option>
     <option value="pups_desc">Most puppies available</option>
@@ -144,7 +144,7 @@
 </div>
 
 <div class="section-note" id="ausNote">
-  <b>December watch (11 Sep):</b> no litter has been born in October yet (it's still September), but three litters <b>due 21–30 September</b> are taking waiting lists now and will be ready to leave late Nov / early Dec — look for the 🎄 <b>DECEMBER-READY</b> badge (Manchester, Spalding, Glasgow). October-born litters should start appearing on Champdogs / Pets4Homes from mid-October. <b>Australian Bulldogs:</b> still no UK breeders or litters marketed; closest alternatives are the Old English Bulldog litters below (Wellingborough, Hamilton) and occasional Bulldog x Frenchie “miniature” crosses.
+  <b>🎄 December pickup — where things stand (18 Sep):</b> the litters that line up best are the ones <b>due / born late September–October</b>: a standard-colour KC litter <b>due ~21 Sep in Manchester</b> (ready mid/late Nov), a licensed breeder in <b>Spalding with a litter due 30 Sep</b> (waiting list open, ready ~late Nov), and a DWKC litter <b>born 15 Sep in Hartlepool</b> (ready 10 Nov). Litters born late Aug–early Sep (Banbury, Greenhithe, Sunderland) are ready late Oct–early Nov. Champdogs currently shows <b>no “litters due”</b> for Bulldogs — register on its waiting list and message the KC show kennels (Chayo, Laroyal, Boltonbully, Dreadgod) directly about autumn matings. <b>Australian Bulldogs:</b> still no UK breeders or litters found; nearest UK alternatives remain the Old English Bulldog type and English x French “miniature” crosses.
 </div>
 
 <div class="grid" id="cards"></div>
@@ -152,11 +152,12 @@
 <div id="guidePanel" class="hidden">
   <div class="panel">
     <h2>🗓️ Your December Puppy Timeline</h2>
-    <p style="font-size:.85rem;color:var(--muted);margin-bottom:6px">Puppies leave their mum at 8 weeks minimum. For a <b>December pickup</b>, you want a litter <b>born late September – mid October 2026</b>. Most litters listed today (born Jun–Aug) will be gone by December — so use them to shortlist breeders, then get on the waiting lists for the September/October litters now.</p>
+    <p style="font-size:.85rem;color:var(--muted);margin-bottom:6px">Puppies leave their mum at 8 weeks minimum. For a <b>December pickup</b>, you want a litter <b>born late September – mid October 2026</b>. Most litters listed today (born July–early Sep) will be gone by November — so use them to shortlist breeders and get on waiting lists now.</p>
     <div class="timeline">
-      <div class="tstep"><b>Now – Sep</b>Message the three “due in September” breeders (Manchester, Spalding, Glasgow) and join waiting lists. Pay £500-ish deposits only after video calls / seeing the mum.</div>
-      <div class="tstep"><b>Oct</b>Target litters born late Sep / this month. Visit at 4–6 weeks; check KC papers, BOAS grades, Bulldog Breed Council health certificates.</div>
-      <div class="tstep"><b>Nov</b>Second visit; confirm vet check, microchip, first vaccination, KC registration transfer.</div>
+      <div class="tstep"><b>Now (mid-Sep)</b>Shortlist 3–5 KC breeders from this dashboard. Join the Manchester (due 21 Sep) and Spalding (due 30 Sep) waiting lists; register on Champdogs' Bulldog litter alert.</div>
+      <div class="tstep"><b>Late Sep – Oct</b>Litters born now are your December pups. Pay ~£500 deposits only after a video call / seeing the mum; ask for KC names and health certificates.</div>
+      <div class="tstep"><b>Oct – Nov</b>Visit at 4–6 weeks; check KC papers, BOAS grades, Bulldog Breed Council health certificates. Second visit to confirm vet check, microchip, first vaccination.</div>
+      <div class="tstep"><b>Late Nov</b>Confirm KC registration transfer, insurance quotes and collection date. Buy crate, food the breeder uses, and get a vet appointment booked.</div>
       <div class="tstep"><b>Dec 🎄</b>Collect at 8+ weeks. Insure from day one (bulldogs are pricey to insure — get quotes early).</div>
     </div>
   </div>
@@ -164,174 +165,151 @@
     <h2>✅ Safe-Buying Checklist (avoid scams &amp; puppy farms)</h2>
     <ul>
       <li>Always see the puppy with its mum at the breeder's home (Lucy's Law: buy direct from breeder or rescue only).</li>
-      <li>Verify KC registration yourself on The Kennel Club website before paying — ask for the dam's registered name.</li>
+      <li>Verify KC registration yourself on The Kennel Club website before paying — ask for the dam's registered name. "DWKC" / "WDKC" / NEBBR are NOT The Kennel Club.</li>
       <li>Ask for Bulldog Breed Council health scheme certificates (Bronze/Silver/Gold) and BOAS grades (0–1 is best).</li>
-      <li>Be wary of "rare colours" (lilac, merle, chocolate, blue tri) at premium prices — these are non-breed-standard and often bred for fashion, not health. Merle dogs cannot be KC registered (DWKC papers instead).</li>
-      <li>Never pay a full amount by bank transfer before visiting; typical deposit is ~£500 with a receipt/contract.</li>
+      <li>Be wary of "rare colours" (lilac, merle, chocolate, blue) at premium prices — these are non-breed-standard and often bred for fashion, not health.</li>
+      <li>Never pay a full amount by bank transfer before visiting; typical deposit is ~£500 with a receipt/contract. Adverts far below market (e.g. KC pups at £1,200) are a scam red flag.</li>
       <li>Check the breeder's council licence if they breed 3+ litters/year; Champdogs and Pets4Homes "ID verified" helps but is not proof.</li>
       <li>Expect: vet check, microchip, first vaccination, worming, puppy pack and contract at handover.</li>
       <li>Budget beyond purchase: insurance £60–£120+/month for bulldogs, plus potential BOAS surgery costs.</li>
     </ul>
   </div>
   <div class="panel">
-    <h2>💷 Price Guide (verified 11 Sep 2026)</h2>
+    <h2>💷 Price Guide (verified 18 Sep 2026)</h2>
     <ul>
-      <li>KC-registered, health-tested litters from established/show kennels: £2,500–£3,500 (Bradford, Newbury, Chelajay Spalding, Diss, Derby).</li>
-      <li>Top show/Crufts lines and low-COI health-tested litters: £4,000–£4,600 (Laroyal £4,600, Snorabulls York £4,500, Manchester Sept litter £4,000).</li>
-      <li>Older “last pup” litters are being reduced: Jedburgh £3,000→£1,800, Mansfield £2,750→£2,000, Wigan £2,600→£2,500, Sheffield girl £2,495.</li>
-      <li>Non-KC / Old English Bulldog types: £1,600–£3,000 (Wellingborough £1,850, Hamilton £2,500–£3,000).</li>
-      <li>Miniature (Bulldog x Frenchie) crosses: ~£900–£1,500 when they appear (none live in Sep 2026).</li>
+      <li>KC-registered, health-tested standard-colour litters: £2,300–£3,500 (most cluster at £2,500–£3,000).</li>
+      <li>Top show / Champion-sired lines: £3,500–£4,600 (Laroyal, Chayo, Bullmont lines; Champdogs kennels often "price on enquiry").</li>
+      <li>Non-standard colours (lilac, merle, blue tri): anywhere from £1,500 (end-of-litter discounts) to £4,000–£6,000 "pick of litter".</li>
+      <li>Old English Bulldog (NEBBR) types: £1,250–£2,000. Miniature (Bulldog x Frenchie) crosses: ~£1,800 when they appear.</li>
       <li>Rescue adoption: nominal fee up to ~£400 (includes neutering/vaccination at general rescues).</li>
     </ul>
   </div>
 </div>
 
 <footer>
-  Sources: Champdogs, Pets4Homes, Freeads, bulldogrescue.org.uk, theedwardfoundation.co.uk, geordiebullies.net, Dogs Trust, Blue Cross, Birmingham Dogs Home — all listings verified live on 11 Sep 2026 and deduplicated across sites (e.g. the Glasgow litter on Freeads + Pets4Homes is one entry). Removed since 8 Aug as sold/withdrawn: Chilborough (Coventry), Dreadgod (Bolton), Wellingborough lilac litter, Morden, Washington, Nottingham, Derby Ch x Ch, Kettering, Portsmouth OEB. Photos load directly from the source sites and may disappear when a listing is removed or a site blocks embedding — click "View listing" for the live advert. Availability changes fast; prices shown are advertised guide prices. The Kennel Club Find-a-Puppy and Gumtree could not be indexed automatically — worth checking manually. Some rescues (Bulldog Rescue &amp; Rehoming Trust) only show dogs after you register as an adopter.
+  Sources: Champdogs, Pets4Homes, Freeads, bulldogrescue.org.uk, theedwardfoundation.co.uk, geordiebullies.net, Dogs Trust, Blue Cross, Birmingham Dogs Home — all listings verified live on 18 Sep 2026 and deduplicated across sites. Photos load directly from the source sites and may disappear when a listing is removed or a site blocks embedding — click "View listing" for the live advert. Availability changes fast; prices shown are advertised guide prices. The Kennel Club Find-a-Puppy and Gumtree could not be indexed automatically — worth checking manually. Some rescues (Bulldog Rescue &amp; Rehoming Trust) only show dogs after you register as an adopter.
 </footer>
 
 <script>
 const LISTINGS = [
- {id:"n1",cat:"buy",dec:true,name:"Deluxabulls — standard litter DUE 21 Sept (waiting list open)",type:"English Bulldog",kc:"yes",pups:8,sexes:"7–8 expected (scan) · mainly red & white",price:4000,loc:"Manchester, Greater Manchester",lat:53.4808,lng:-2.2426,
-  lineage:"Standard-colour English Bulldogs. Dad is Bulldog Breed Council Gold health tested. Mum scanned and expecting 7–8 puppies; family-raised.",
-  url:"https://www.pets4homes.co.uk/classifieds/fhzqx6mo1-puppies-due-21st-september-waiting-list-now-open-manchester/",source:"Pets4Homes",names:[],posted:"Due ~21 Sep 2026 · ready mid/late Nov",
-  imgs:[],
-  notes:"🎄 Best December fit found this week: born late Sept → leaves late Nov. Message to join the waiting list (Instagram @deluxabullsx). KC registered, vet checked, microchipped, first jab by collection."},
- {id:"n2",cat:"buy",dec:true,name:"Licensed smallholding breeder — waiting list for litter DUE 30 Sept",type:"English Bulldog",kc:"yes",pups:0,sexes:"waiting list — current litter of 8 all homed",price:2500,loc:"Spalding, Lincolnshire",lat:52.7869,lng:-0.1529,
-  lineage:"Fully licensed breeder; puppies raised on a family smallholding around children, dogs and horses; raw-fed during weaning; lifetime support. Parents health tested.",
-  url:"https://www.pets4homes.co.uk/classifieds/wbmekvocw-raised-with-love-bred-with-care-spalding/",source:"Pets4Homes",names:[],posted:"Next litter due 30 Sep 2026 · ready ~late Nov",
-  imgs:[],
-  notes:"🎄 December fit: next litter due 30 Sept. Price shown is the current litter's (£2,500) — confirm for the new litter. ID-verified, licensed."},
- {id:"n3",cat:"buy",dec:true,name:"Family litter due imminently (Glasgow) — ready 13 Nov",type:"English Bulldog",kc:"unknown",pups:6,sexes:"3 boys / 3 girls expected",price:2500,loc:"Glasgow, Glasgow City",lat:55.8642,lng:-4.2518,
-  lineage:"Full-pedigree mum and dad; dad KC registered (mum's registration not stated — ask). Both family pets with docile temperaments.",
-  url:"https://www.pets4homes.co.uk/classifieds/pf56jkndw-english-bulldog-litter-due-soon-glasgow/",source:"Pets4Homes",names:[],posted:"Due Sep 2026 · ready to leave 13 Nov 2026",
-  imgs:[],
-  notes:"🎄 Ready 13 Nov — would be ~11 weeks at a December pickup. Advert ticks 'KC registered by collection' but only dad is confirmed KC; verify the dam's papers."},
+ // ---------- DECEMBER-READY: due / born late Sep – Oct ----------
+ {id:"n1",cat:"buy",dec:true,name:"Litter DUE ~21 Sep — standard KC bulldogs, waiting list open (Manchester)",type:"English Bulldog",kc:"yes",pups:8,sexes:"7–8 expected (scanned) · 4 boys / 4 girls listed",price:4000,loc:"Manchester, Greater Manchester",lat:53.4808,lng:-2.2426,
+  lineage:"Standard-colour litter (mostly red & white). Sire Bulldog Breed Council Gold health tested; both parents health tested. KC registered by collection.",
+  url:"https://www.pets4homes.co.uk/classifieds/fhzqx6mo1-puppies-due-21st-september-waiting-list-now-open-manchester/",source:"Pets4Homes",names:[],posted:"Due ~21 Sep 2026 · ready mid/late Nov",imgs:[],
+  notes:"🎄 Best timing match for a December pickup. Reserve from the waiting list now; puppies leave mid/end November with microchip, first jab, worming. Seller not ID-verified — insist on seeing mum before any deposit."},
+ {id:"n2",cat:"buy",dec:true,name:"Zara French Ltd (licensed breeder) — next litter DUE 30 Sep (Spalding)",type:"English Bulldog",kc:"yes",pups:0,sexes:"Current litter of 8 all reserved · waiting list for 30 Sep litter",price:2500,loc:"Spalding, Lincolnshire",lat:52.7868,lng:-0.1529,
+  lineage:"Council-licensed breeder (South Holland AWL00101), 4.8★ from 6 reviews, ID verified. Puppies raised on a smallholding around children, dogs and horses; raw-fed during weaning; KC registered by collection.",
+  url:"https://www.pets4homes.co.uk/classifieds/wbmekvocw-raised-with-love-bred-with-care-spalding/",source:"Pets4Homes",names:[],posted:"Next litter due 30 Sep 2026 · ready ~25 Nov",imgs:[],
+  notes:"🎄 Message to join the waiting list for the 30 September litter — ready late Nov, i.e. a December-friendly pickup. £2,500 guide price from current litter. Weekly photo/video updates offered."},
+ {id:"n3",cat:"buy",dec:true,name:"Bella x Azzy — born 15 Sep, 2 girls left (Hartlepool)",type:"English Bulldog",kc:"no",pups:2,sexes:"2 girls (of 1 boy / 3 girls)",price:2500,loc:"Hartlepool, County Durham",lat:54.6896,lng:-1.2126,
+  lineage:"Dam Bella lilac tri, sire Azzy; both health tested. DWKC registered (NOT The Kennel Club) — non-standard colours.",
+  url:"https://www.pets4homes.co.uk/classifieds/a4lb9g0da-english-bulldog-puppies-hartlepool/",source:"Pets4Homes",names:[],posted:"Born 15 Sep 2026 · ready 10 Nov",imgs:[],
+  notes:"🎄 Ready 10 Nov — fits a December pickup if the breeder will hold. Girls £2,500 and £3,500. ID-verified seller, member since 2013; £500 deposit; viewings from 6 weeks."},
+ // ---------- Born late Aug – early Sep: ready Oct / early Nov ----------
+ {id:"n5",cat:"buy",name:"Health-tested traditional litter, Crufts-qualified sire (Banbury)",type:"English Bulldog",kc:"yes",pups:4,sexes:"4 of 7 available (2 boys / 5 girls)",price:3500,loc:"Banbury, Oxfordshire",lat:52.0629,lng:-1.3398,
+  lineage:"Sire: BBC Bronze/Silver, BOAS graded, patella 0:0, heart clear, cystinuria DNA clear, HUU tested, Crufts qualified. Dam: BBC Bronze/Silver, BOAS graded, patella 0:0, HUU clear. COI 8.8% over 31 generations. Traditional red & fawn shades.",
+  url:"https://www.pets4homes.co.uk/classifieds/dhkfrrt7-health-tested-english-bulldog-litter-banbury/",source:"Pets4Homes",names:[],posted:"Born ~4 Sep 2026 · ready 29 Oct",imgs:[],
+  notes:"One of the most thoroughly health-documented Pets4Homes litters found. Ready end of October — ask whether they would hold a puppy to early December."},
+ {id:"n7",cat:"buy",name:"Brindle pied boys, HUU-clear parents (Sunderland)",type:"English Bulldog",kc:"yes",pups:2,sexes:"2 boys",price:2500,loc:"Sunderland, Tyne & Wear",lat:54.9069,lng:-1.3838,
+  lineage:"Mum deep red & white, dad white with heavy bone. Both parents HUU clear; sire fully health tested, dam's testing pending. KC registered by collection.",
+  url:"https://www.pets4homes.co.uk/classifieds/7xjzzaasz-bulldog-puppys-sunderland/",source:"Pets4Homes",names:[],posted:"3 weeks old · ready 22 Oct",imgs:[],
+  notes:"ID-verified seller. Raised around household noise. Ready late October."},
+ {id:"n6",cat:"buy",name:"KC lilac-tri litter, Wilfred & Ernest (Greenhithe)",type:"English Bulldog",kc:"yes",pups:2,sexes:"2 boys (of 3)",price:3800,loc:"Greenhithe, Kent",lat:51.4494,lng:0.2837,
+  lineage:"Both parents health tested; 'prestigious' colour lines. Lilac tri merle (£3,800) and lilac tri (£4,000) — non-breed-standard colours.",
+  url:"https://www.pets4homes.co.uk/classifieds/h0t9jzk-2-quality-english-bulldogs-greenhithe/",source:"Pets4Homes",names:["Wilfred (£3,800)","Ernest (£4,000)"],posted:"Born ~30 Aug 2026 · ready 24 Oct",imgs:[],
+  notes:"ID-verified seller since 2013; viewings from 20 Sep; £500 deposit; 1st AND 2nd vaccinations included. Merle carries health caveats — see checklist."},
+ {id:"n8",cat:"buy",name:"Coco's litter of 9, born 16 Aug (Liss)",type:"English Bulldog",kc:"unknown",pups:8,sexes:"5 boys / 4 girls (1 reserved)",price:3800,loc:"Liss, Hampshire",lat:51.0416,lng:-0.8915,
+  lineage:"Dam Coco is DWKC-registered merle (not KC-eligible); sire KC-registered 'son of Top Boy'. Advert says KC by collection — confirm which registry the pups will actually carry.",
+  url:"https://www.pets4homes.co.uk/classifieds/sefjgugmj-9-beautiful-5-english-bulldogs-liss/",source:"Pets4Homes",names:[],posted:"Born 16 Aug 2026 · ready 10 Oct",imgs:[],
+  notes:"Largest litter currently listed (£3,800–£4,000). Not ID-verified — verify registration paperwork before any deposit."},
+ {id:"n14",cat:"buy",name:"Last little KC girl — ready 11 Oct (Chigwell)",type:"English Bulldog",kc:"yes",pups:1,sexes:"1 girl (of 1 boy / 5 girls)",price:2500,loc:"Chigwell, Essex",lat:51.6252,lng:0.0814,
+  lineage:"KC registered, standard colour; health-checked, microchipped and vaccinated by collection.",
+  url:"https://www.pets4homes.co.uk/classifieds/8yxr92mfb-registered-english-bulldog-puppies-chigwell/",source:"Pets4Homes",names:[],posted:"Ready 10–11 Oct 2026",imgs:[],
+  notes:"ID-verified breeder, member since 2014. Good value KC girl if you can collect in October."},
+ {id:"n9",cat:"buy",name:"Diva's traditional red & white girls (Northampton)",type:"English Bulldog",kc:"yes",pups:1,sexes:"1 girl (of 4 girls)",price:2850,loc:"Northampton, West Northamptonshire",lat:52.2405,lng:-0.9027,
+  lineage:"Sire 'Benson' DNA clear HUU / CMR1 / DM / CY3; family-pet dam. 5-generation pedigree and KC papers included.",
+  url:"https://www.pets4homes.co.uk/classifieds/goeomn0bg-traditional-british-bulldogs-northampton/",source:"Pets4Homes",names:[],posted:"5 weeks old · ready 5 Oct",imgs:[],
+  notes:"ID-verified, 4.3★ (4 reviews). Standard colours, family-raised."},
+ {id:"n10",cat:"buy",name:"Ruby x Boss — top-tier KC litter (Morecambe)",type:"English Bulldog",kc:"yes",pups:3,sexes:"1 boy / 2 girls",price:2200,loc:"Morecambe, Lancashire",lat:54.071,lng:-2.87,
+  lineage:"'Premium bloodlines', thick bone and rope; standard colours. No named DNA tests in advert — ask.",
+  url:"https://www.pets4homes.co.uk/classifieds/ew42t4jko-top-tier-kc-british-bulldog-morecambe/",source:"Pets4Homes + Freeads (deduplicated)",names:[],posted:"5 weeks old · ready 2 Oct",imgs:[],
+  notes:"Boys £2,200 / girls £2,500 — cheapest KC standard-colour litter found. Same litter also on Freeads. Seller not ID-verified."},
+ {id:"n11",cat:"buy",name:"Posherbulls / Mr Muscle lines, 5-panel tested (Newbury)",type:"English Bulldog",kc:"yes",pups:2,sexes:"2 boys (of 2 boys / 4 girls)",price:3000,loc:"Newbury, Berkshire",lat:51.4014,lng:-1.3231,
+  lineage:"Both parents 5-panel health tested incl. HUU clear; both hold KC Good Citizen awards and do agility. Bloodlines incl. Posherbulls, Mr Muscle, Rude Boy.",
+  url:"https://www.pets4homes.co.uk/classifieds/lq6whwdcw-stunning-kc-reg-english-bulldog-puppies-newbury/",source:"Pets4Homes",names:[],posted:"6 weeks old · ready 27 Sep",imgs:[],
+  notes:"ID-verified, member since 2013; breeder interviews buyers. Both parents on site."},
+ {id:"n12",cat:"buy",name:"Ch Bullmont lines — red girl & boy (Bradford)",type:"English Bulldog",kc:"yes",pups:2,sexes:"1 boy / 1 girl",price:3500,loc:"Bradford, West Yorkshire",lat:53.796,lng:-1.7594,
+  lineage:"Dam is full sister to Ch Bullmont Lord Stannis; sire Ch Bullmont Lord of Light. Standard red, straight tails; line of health-tested parents and grandparents.",
+  url:"https://www.pets4homes.co.uk/classifieds/5qzsyozb-beautiful-kc-reg-health-tested-pup-bradford/",source:"Pets4Homes",names:[],posted:"6 weeks old · ready 30 Sep",imgs:[],
+  notes:"Show-quality standard pups. Not ID-verified — ask for KC names and BBC certificates."},
+ {id:"n13",cat:"buy",name:"Chayo — Lockjaw De New Gryffindor Mystyle x Fearnought Ice Ice Baby",type:"English Bulldog",kc:"yes",pups:2,sexes:"1 boy / 1 girl",price:null,loc:"Sale, Cheshire",lat:53.4241,lng:-2.3221,
+  lineage:"Sire: BBC Silver, BOAS 1, HUU clear (Ricatori / Meljane lines). Dam: BBC GOLD, BOAS 0, HUU clear, eyes unaffected (Ch Fearnought King of The Road daughter). Champion-heavy pedigree. Red & white.",
+  url:"https://www.champdogs.co.uk/litter/79727",source:"Champdogs",names:[],posted:"Born 31 Jul 2026 · ready 25 Sep",
+  imgs:["https://nimages.champdogs.net/5097/p58326420.webp","https://nimages.champdogs.net/5097/l97757626.webp","https://nimages.champdogs.net/5097/p85146971.webp","https://nimages.champdogs.net/5097/p57276862.webp","https://nimages.champdogs.net/5097/l15314668.webp"],
+  notes:"New on Champdogs — the best-documented health testing of any current litter (dam BBC Gold). Leaves with 1st jab (full course paid by breeder), microchip, KC reg, lifetime support. Price on enquiry. Ask Chayo about winter litters too."},
+ {id:"n15",cat:"buy",name:"DWKC colour litter — lilac tri / choc tan / black tri (Leeds)",type:"English Bulldog",kc:"no",pups:4,sexes:"4 of 6 (2 boys / 4 girls)",price:2500,loc:"Leeds, West Yorkshire",lat:53.8008,lng:-1.5491,
+  lineage:"DWKC paperwork (not The Kennel Club); no parental health-test details given. Non-standard colours.",
+  url:"https://www.pets4homes.co.uk/classifieds/qu0f74w33-stunning-dwkc-registered-english-bulldog-puppies-leeds/",source:"Pets4Homes + Freeads (deduplicated)",names:[],posted:"5 weeks old · ready 8 Oct",imgs:[],
+  notes:"ID-verified seller. Included for completeness — lower priority than KC/health-tested litters."},
+ // ---------- Ready now (born Jun – Jul) — useful for breeder shortlisting ----------
  {id:"l3",cat:"buy",name:"Laroyal — Luthers Legacy x Blurred Lines (show line)",type:"English Bulldog",kc:"yes",pups:1,sexes:"1 girl",price:4600,loc:"Hailsham, East Sussex",lat:50.8647,lng:0.2577,
-  lineage:"Seven generations of Laroyal breeding; Crufts-qualified parents. Sire BBC Silver (BOAS 0, heart 0, patella 0/0, Cystinuria clear); Dam BBC Gold (BOAS 1, heart 0). Fully health tested.",
-  url:"https://www.champdogs.co.uk/litter/78117",source:"Champdogs",names:[],posted:"Born 2 Jun 2026 · still 1 girl (11 Sep)",
+  lineage:"Seven generations of Laroyal breeding; Crufts-qualified parents. Sire BBC Silver (BOAS 0, heart 0, patella 0/0); Dam BBC Gold. Fully health tested.",
+  url:"https://www.champdogs.co.uk/litter/78117",source:"Champdogs",names:[],posted:"Born 2 Jun 2026 · still listed 18 Sep",
   imgs:["https://nimages.champdogs.net/36/p93860775.webp","https://nimages.champdogs.net/36/l3397317.webp","https://nimages.champdogs.net/36/l21979292.webp"],
-  notes:"Show-quality red & white; one girl left, viewings under way. Highest-priced verified litter. Laroyal also bred a Nov 2025 litter — worth asking about their next planned litter."},
- {id:"l4",cat:"buy",name:"Abifinstar — Weaver Bull's Steppenwolf x Souterbull Wish Upon A Star",type:"English Bulldog",kc:"yes",pups:1,sexes:"1 girl left (of 3 boys / 2 girls)",price:3000,loc:"Ince, Cheshire",lat:53.2833,lng:-2.8167,
-  lineage:"Sire 'Wolf' fully health tested (BBC Silver, BOAS 1, HUU + heart clear); Dam 'Nancy' BBC Bronze, BOAS 1 (Silver pending HUU). Brindle & white; KC Assured breeder of 14+ years, standard colours only.",
-  url:"https://www.champdogs.co.uk/litter/78848",source:"Champdogs",names:[],posted:"Born 18 Jun 2026 · last girl ready now",
-  imgs:["https://nimages.champdogs.net/55320/l31354738.webp","https://nimages.champdogs.net/55320/l51469330.webp","https://nimages.champdogs.net/55320/p12463055.webp"],
-  notes:"Uniquely marked 'flashy' show-potential brindle & white girl; microchipped, inoculated, vet-checked. Contract + lifetime support. Champdogs also lists a second Cheshire Bulldog litter (born 31 Jul, ref 79727) that is only visible to signed-in members — sign in to Champdogs to view."},
- {id:"n12",cat:"buy",name:"Snorabulls — Royal Seal x Kentwone Stirling Wheeler (low COI, BOAS tested)",type:"English Bulldog",kc:"yes",pups:4,sexes:"2 boys / 2 girls",price:4500,loc:"York, North Yorkshire",lat:53.96,lng:-1.0873,
-  lineage:"Both parents HUU, CMR1 and DM clear and BOAS graded under the Cambridge Respiratory Function Grading scheme. KC pedigree traceable 32 generations; litter COI 4.2% vs breed average 8%. Mum is a 'blue seal' (non-standard colour).",
-  url:"https://www.pets4homes.co.uk/classifieds/vxvh92luq-snorabulls-top-quality-girls-york/",source:"Pets4Homes",names:[],posted:"6 weeks · ready 19 Sep 2026",
-  imgs:[],
-  notes:"Final litter from this dam. Breeder does not take deposits via the site (previous scam copies of their advert). ID-verified."},
- {id:"n11",cat:"buy",name:"Bullmont-line standard pups — white boy & red girl (Bradford)",type:"English Bulldog",kc:"yes",pups:2,sexes:"1 boy / 1 girl",price:3500,loc:"Bradford, West Yorkshire",lat:53.796,lng:-1.7594,
-  lineage:"Mum is full sister to Ch Bullmont Lord Stannis (her sire Ch Bullmont Lord of Light); health-tested parents and grandparents; bred for breed standard, straight tails.",
-  url:"https://www.pets4homes.co.uk/classifieds/5qzsyozb-beautiful-kc-reg-health-tested-pup-bradford/",source:"Pets4Homes",names:[],posted:"5 weeks · ready 30 Sep 2026",
-  imgs:[],
-  notes:"Champion show lines at a mid price. Leaves KC registered with first vaccine, microchip, contract and puppy pack; deposit holds until 8 weeks."},
- {id:"n10",cat:"buy",name:"KC litter from 5-panel health-tested, agility-trained parents (Newbury)",type:"English Bulldog",kc:"yes",pups:6,sexes:"2 boys / 4 girls",price:3000,loc:"Newbury, Berkshire",lat:51.4014,lng:-1.3231,
-  lineage:"Bloodlines include Posherbulls / Mr Muscle / Rude Boy. Both parents 5-panel health tested incl. HUU clear; both hold KC Good Citizen awards and do agility — bred to breathe well.",
-  url:"https://www.pets4homes.co.uk/classifieds/lq6whwdcw-stunning-kc-reg-english-bulldog-puppies-newbury/",source:"Pets4Homes",names:[],posted:"5 weeks · ready 27 Sep 2026",
-  imgs:[],
-  notes:"Breeder's only litter, raised in the home. Pro account."},
- {id:"n16",cat:"buy",name:"Chelajay Bulldogs — Gabby x UK Ch Mellowmood I'm A Lucky Man",type:"English Bulldog",kc:"yes",pups:2,sexes:"1 boy (£3,200) / 1 girl (£3,400) available of 5",price:3200,loc:"Spalding, Lincolnshire",lat:52.7869,lng:-0.1529,
-  lineage:"Sire: UK Ch Mellowmood I'm A Lucky Man (same champion sire as the sold-out Dreadgod litter). Both parents health tested incl. BOAS scored and HUU clear. Mostly white with unique markings. Licensed breeder.",
-  url:"https://www.pets4homes.co.uk/classifieds/k0071mt2q-exciting-litter-spalding/",source:"Pets4Homes",names:[],posted:"7 weeks · ready 16 Sep 2026",
-  imgs:[],
-  notes:"Self-whelped litter; KC registered with endorsements, first vaccine, microchip. Viewings from 6 weeks; existing customers get priority."},
- {id:"n9",cat:"buy",name:"Traditional red & white litter — 4 girls (Northampton)",type:"English Bulldog",kc:"yes",pups:4,sexes:"4 girls",price:2850,loc:"Northampton, Northamptonshire",lat:52.2405,lng:-0.9027,
-  lineage:"Dam 'Diva' traditional red & white family pet (three generations live in the home); sire 'Benson' traditional red & white, health tested clear incl. HUU.",
-  url:"https://www.pets4homes.co.uk/classifieds/goeomn0bg-traditional-british-bulldogs-northampton/",source:"Pets4Homes",names:[],posted:"4 weeks · ready 5 Oct 2026",
-  imgs:[],
-  notes:"Standard colours, pet-home litter. KC registered by collection."},
- {id:"n8",cat:"buy",name:"Bred for health, temperament & conformation (Glasgow)",type:"English Bulldog",kc:"yes",pups:4,sexes:"2 boys / 2 girls",price:3500,loc:"Glasgow, Glasgow City",lat:55.8542,lng:-4.2418,
-  lineage:"Short advert: parents health tested; bred for health, temperament and conformation. Ask for pedigree and test results.",
-  url:"https://www.pets4homes.co.uk/classifieds/urgwwnpbh-bulldog-puppies-glasgow/",source:"Pets4Homes",names:[],posted:"4 weeks · ready 4 Oct 2026",
-  imgs:[],
-  notes:"ID-verified. Little detail in the advert — worth a call before travelling."},
- {id:"n6",cat:"buy",name:"KC family litter — 4 girls / 1 boy (Chigwell)",type:"English Bulldog",kc:"yes",pups:5,sexes:"1 boy / 4 girls",price:2500,loc:"Chigwell, Essex",lat:51.6247,lng:0.0805,
-  lineage:"Home-raised around children and dogs, handled daily; parents health tested (details on request).",
-  url:"https://www.pets4homes.co.uk/classifieds/8yxr92mfb-registered-english-bulldog-puppies-chigwell/",source:"Pets4Homes",names:[],posted:"3 weeks · ready 10 Oct 2026",
-  imgs:[],
-  notes:"£500 deposit; payment plans offered. 35 photos on the advert."},
- {id:"n5",cat:"buy",name:"Coco's litter of 9 — merle dam, KC sire (Liss)",type:"English Bulldog",kc:"no",pups:9,sexes:"5 boys / 4 girls",price:3800,loc:"Liss, Hampshire",lat:51.0428,lng:-0.8919,
-  lineage:"Dam Coco is DWKC registered (merle — cannot be KC registered); stud is KC registered, son of 'Top Boy'. Family pet raised with 3 children.",
-  url:"https://www.pets4homes.co.uk/classifieds/sefjgugmj-9-beautiful-5-english-bulldogs-liss/",source:"Pets4Homes",names:[],posted:"Born 16 Aug 2026 · ready 10 Oct",
-  imgs:[],
-  notes:"Large litter, but merle is a non-breed-standard colour and pups will not be KC registered — priced high for that. 22 photos."},
- {id:"n4",cat:"buy",name:"Lilac tri / merle boys, health-tested parents (Greenhithe)",type:"English Bulldog",kc:"yes",pups:2,sexes:"2 boys left of 3 (£3,700–£4,000 each)",price:3700,loc:"Greenhithe, Kent",lat:51.4507,lng:0.2836,
-  lineage:"Both parents health tested; 'top bloodlines' claimed. Lilac tri merle and lilac tri — non-standard colours.",
-  url:"https://www.pets4homes.co.uk/classifieds/h0t9jzk-2-quality-english-bulldogs-greenhithe/",source:"Pets4Homes",names:[],posted:"Born ~1 Sep 2026 · viewings from 20 Sep · ready 24 Oct",
-  imgs:[],
-  notes:"Headline price £2,500 but named pups are £3,700–£4,000. £500 non-refundable deposit. Non-standard colours — check KC status of a merle."},
- {id:"n7",cat:"buy",name:"Hand-reared 'rainbow' litter, sire Uncle Fester (Preston)",type:"English Bulldog",kc:"yes",pups:6,sexes:"4 boys / 2 girls",price:2300,loc:"Preston, Lancashire",lat:53.7632,lng:-2.7031,
-  lineage:"Sire: Uncle Fester (IDCBULLZ, lilac tri; Bible John / Shrinkabulls lines). Dam Bella Morning Star (black & tan merle carrier, Epicbullyz / Posherbulls lines) sadly died 4 days after whelping — pups hand-reared.",
-  url:"https://www.pets4homes.co.uk/classifieds/jhusfsklu-excellent-healthy-puppies-please-read-advert-preston/",source:"Pets4Homes",names:[],posted:"3 weeks · ready 13 Oct 2026",
-  imgs:[],
-  notes:"You will not be able to see mum (deceased) — a Lucy's Law red flag to weigh up carefully. Non-standard colours."},
- {id:"n17",cat:"buy",name:"KC litter of 8, 5-generation pedigrees (Llanelli, South Wales)",type:"English Bulldog",kc:"yes",pups:5,sexes:"5 of 8 left · boys £2,600 / girls £3,500",price:2600,loc:"Llanelli, Carmarthenshire",lat:51.6819,lng:-4.1636,
-  lineage:"Sire Prada's Big Boss (brown & tan) x dam Moana Peggy (blue & tan), both KC registered; lines include Rarebullies, Epic Bullyz, Shrinkabulls, Gorgorbulz. Non-standard colours.",
-  url:"https://www.freeads.co.uk/uk/buy-sell/pets/dogs/bulldog/41852345/kc-registered-english-bulldog-puppies/view",source:"Freeads",names:[],posted:"Born 21 Jul 2026 · ready now",
-  imgs:["https://asset.freeads.co.uk/img/628x470/8cede580155eb57491ab8af950d1cf0d5882c8f628899.webp","https://asset.freeads.co.uk/img/628x470/b7b496d00fadc9fa212c4e11b3a313c4b0f540526387.webp","https://asset.freeads.co.uk/img/628x470/24fac36980f9a7c508491d08c163492f1759564773757.webp","https://asset.freeads.co.uk/img/628x470/362addf85b78523e89cb3be1d069ed453abda8251049.webp","https://asset.freeads.co.uk/img/628x470/5fd766a042bcaa8f172ae235d8d6809ff8236cdc71149.webp","https://asset.freeads.co.uk/img/628x470/0bbbe39ac0994c03e878ec8a63fdb51106e432ea2219.webp","https://asset.freeads.co.uk/img/628x470/61ae28dd4d0d8d75c195c1b658e951e884e3240542529.webp","https://asset.freeads.co.uk/img/628x470/01b1c734331d48f18ce4cdeadd8e5aeee8d135be41405.webp"],
-  notes:"Only Welsh litter found. VIP Freeads member."},
- {id:"n18",cat:"buy",name:"Black tri / lilac & tan litter, last 4 (Glasgow)",type:"English Bulldog",kc:"yes",pups:4,sexes:"2 boys / 2 girls left of 7 · silver boy £3,000",price:2500,loc:"Glasgow, Glasgow City",lat:55.8742,lng:-4.2618,
-  lineage:"'Amazing pedigree' claimed; raised indoors around children; KC registered per Pets4Homes advert. Non-standard colours.",
-  url:"https://www.pets4homes.co.uk/classifieds/ibwek8mbz-english-bulldog-puppies-ready-to-go-now-glasgow/",source:"Pets4Homes + Freeads (deduplicated)",names:[],posted:"9 weeks · ready now",
-  imgs:["https://asset.freeads.co.uk/img/628x470/5122440ff48dffec725aaed78c0d46d9c8d1344c80550.webp","https://asset.freeads.co.uk/img/628x470/c2c7c28f1b112c627745120f03a1e374fecd5a4512615.webp","https://asset.freeads.co.uk/img/628x470/caa1aede8fb12d5df9378783af713c85abddbf9325840.webp","https://asset.freeads.co.uk/img/628x470/dc6f5e8e236503223fa383053bbf5555fdd83b9758206.webp","https://asset.freeads.co.uk/img/628x470/4ad6f06d3068741d87f0fd1ad395349b289fa2e766516.webp","https://asset.freeads.co.uk/img/628x470/e5c1f20e6435ed3db5aaf5e515d0c19c8edd4d8e40602.webp","https://asset.freeads.co.uk/img/628x470/0c59e6a658dabc5cf3ed10ad44d58ccc8fe082c754933.webp","https://asset.freeads.co.uk/img/628x470/c9ae4781be2c8e99eeca299bc8903d29962a252079445.webp"],
-  notes:"Same litter on Freeads (ad 41854608) and Pets4Homes — one entry. Pro/ID-verified account."},
- {id:"n13",cat:"buy",name:"Andlare-line red girl — sire 2nd at Crufts 2026 (Derby)",type:"English Bulldog",kc:"yes",pups:1,sexes:"1 girl (of 4)",price:3200,loc:"Derby, Derbyshire",lat:52.9225,lng:-1.4746,
-  lineage:"Dam homebred by Andlare Off Yer Rocca (BBC Silver, BOAS 0/1); sire Andlare Razzmataz (2nd at Crufts 2026, health tested, BOAS 1). Pedigree full of show champions.",
-  url:"https://www.pets4homes.co.uk/classifieds/vp4lskgms-2-fantastic-red-british-girls-derby/",source:"Pets4Homes",names:[],posted:"4 months · fully vaccinated, ready now",
-  imgs:[],
-  notes:"Strongest show pedigree among the Pets4Homes listings this week. Older pup (born ~May) — lifetime breeder support. ID-verified."},
- {id:"n14",cat:"buy",name:"'Stella' — traditional red & white girl, champion lines (Sheffield)",type:"English Bulldog",kc:"yes",pups:1,sexes:"1 girl",price:2495,loc:"Sheffield, South Yorkshire",lat:53.3811,lng:-1.4701,
-  lineage:"Born 4 Jun 2026 from champion bloodlines; 15-year registered breeder of traditional colours only ('no fad colours'). Parents health tested.",
-  url:"https://www.pets4homes.co.uk/classifieds/2wzsnnlhh-last-girl-left-kc-bulldog-puppy-champion-lines-sheffield/",source:"Pets4Homes",names:[],posted:"Born 4 Jun 2026 · reduced to £2,495",
-  imgs:[],
-  notes:"Re-listed after time-wasters; price reduced. Traditional breeder worth asking about autumn litters. ID-verified."},
- {id:"n15",cat:"buy",name:"KC standard show-line girl, 15-year breeder (Diss)",type:"English Bulldog",kc:"yes",pups:1,sexes:"1 girl (of 2 boys / 2 girls)",price:3000,loc:"Diss, Norfolk",lat:52.3775,lng:1.1093,
-  lineage:"Kennel Club standard Bulldogs from show lines; both parents health tested and viewable; 15+ years breeding.",
-  url:"https://www.pets4homes.co.uk/classifieds/o0kiarsiy-beautiful-kc-reg-bulldog-puppies-diss/",source:"Pets4Homes",names:[],posted:"12 weeks · ready now",
-  imgs:[],
-  notes:"Comes with 5-gen pedigree, sales contract, care booklet, 5 weeks KC insurance, first vaccination."},
- {id:"l7",cat:"buy",name:"Last remaining girl — family litter (Havant)",type:"English Bulldog",kc:"yes",pups:1,sexes:"1 girl left of 2 boys / 5 girls",price:3000,loc:"Havant, Hampshire",lat:50.8552,lng:-0.9822,
-  lineage:"Mum is a family pet with outstanding temperament; pups raised in a family home with children. Advert now states parents health tested and KC registered by collection.",
-  url:"https://www.pets4homes.co.uk/classifieds/7egipimi6-english-bulldog-puppies-5-girls-2-boys-havant/",source:"Pets4Homes",names:[],posted:"15 weeks · ready now",
-  imgs:[],
-  notes:"Was 7 pups on 8 Aug — now the last girl. Pro / ID-verified seller."},
- {id:"l11",cat:"buy",name:"KC pups, chocolate & chocolate-tri (Wigan)",type:"English Bulldog",kc:"yes",pups:4,sexes:"4 girls left of 3 boys / 5 girls",price:2500,loc:"Wigan, Greater Manchester",lat:53.545,lng:-2.6325,
+  notes:"Still available at 15 weeks. Laroyal also runs a puppy-application waiting list for future litters (pets4homes.co.uk/classifieds/fecbf2b1p-traditional-bulldog-puppies-worth-waiting-for-hailsham/) — worth applying for a winter/spring litter."},
+ {id:"n16",cat:"buy",name:"Show-pedigree KC boys, straight tails (Sheffield)",type:"English Bulldog",kc:"yes",pups:2,sexes:"2 boys (of 3 boys / 1 girl)",price:3000,loc:"Sheffield, South Yorkshire",lat:53.381,lng:-1.47,
+  lineage:"Show pedigree incl. Ch The Crown of The Bulldog Carte D'or; parents HUU / cystinuria / DM / CMR1 clear. Standard colours; breeder keeping a girl to show.",
+  url:"https://www.pets4homes.co.uk/classifieds/ghrvbog0s-kc-british-bulldog-puppies-sheffield/",source:"Pets4Homes",names:[],posted:"9 weeks old · ready now",imgs:[],
+  notes:"Boys £3,000 / girl £3,200. ID-verified."},
+ {id:"n17",cat:"buy",name:"Ch Rosebull His Royal Highness Mystyle sired litter (Rushden)",type:"English Bulldog",kc:"yes",pups:3,sexes:"2 boys / 1 girl",price:3000,loc:"Rushden, North Northamptonshire",lat:52.2885,lng:-0.5978,
+  lineage:"Sire: Champion Rosebull His Royal Highness Mystyle (top producer); parents health tested; bred to the new breed standard.",
+  url:"https://www.pets4homes.co.uk/classifieds/acxz3wbbf-kc-registered-champion-sired-puppys-rushden/",source:"Pets4Homes",names:[],posted:"10 weeks old · ready now",imgs:[],
+  notes:"Champion-sired at a mid-range price. Seller not ID-verified — verify KC names."},
+ {id:"n18",cat:"buy",name:"Nancie x Kadreya Galantis — standard, no colour (Rotherham)",type:"English Bulldog",kc:"yes",pups:3,sexes:"3 girls (of 3 boys / 4 girls)",price:2300,loc:"Rotherham, South Yorkshire",lat:53.4302,lng:-1.3568,
+  lineage:"Dam Nancie (Kelloe lines, self-whelped); sire Eli 'Kadreya Galantis', actively shown, health tested, champion bloodlines. Standard lines only.",
+  url:"https://www.pets4homes.co.uk/classifieds/mytvjpjno-quality-bulldog-puppies-rotherham/",source:"Pets4Homes",names:[],posted:"11 weeks old · fully vaccinated, ready now",imgs:[],
+  notes:"ID-verified. Both vaccinations done; one smaller girl reduced for a minor umbilical hernia. Best-value KC standard litter."},
+ {id:"n19",cat:"buy",name:"Pip's natural-birth litter of 8 (Rochford)",type:"English Bulldog",kc:"yes",pups:7,sexes:"7 of 8 (4 boys / 4 girls)",price:2800,loc:"Rochford, Essex",lat:51.583,lng:0.706,
+  lineage:"Family-pet dam 'Pip' whelped naturally (rare for the breed). Standard colours; no DNA panel named in advert.",
+  url:"https://www.pets4homes.co.uk/classifieds/absjaut7f-stunning-english-bulldog-puppies-rochford/",source:"Pets4Homes",names:[],posted:"Born 17 Jul 2026 · ready now",imgs:[],
+  notes:"£2,800–£4,000 per pup. ID-verified. Seen with mum in family home."},
+ {id:"n20",cat:"buy",name:"Dotty's traditional litter — last 3 girls (Birmingham)",type:"English Bulldog",kc:"yes",pups:3,sexes:"3 girls (of 4 boys / 3 girls)",price:2600,loc:"Birmingham, West Midlands",lat:52.486,lng:-1.89,
+  lineage:"Sire DNA clear HUU / CMR1 / DM / CY3-var3. Standard colours; family-raised with children and dogs.",
+  url:"https://www.pets4homes.co.uk/classifieds/vt3f8432n-stunning-traditional-english-bulldog-birmingham/",source:"Pets4Homes",names:[],posted:"12 weeks old · ready now",imgs:[],
+  notes:"Girls £2,600–£2,800. ID-verified."},
+ {id:"n22",cat:"buy",name:"KC red & white, BOAS 0/1 & HUU-clear parents (Plymouth)",type:"English Bulldog",kc:"yes",pups:4,sexes:"2 boys / 2 girls (of 7)",price:2500,loc:"Plymouth, Devon",lat:50.3914,lng:-4.1255,
+  lineage:"Mum BOAS grade 1, HUU clear, BVA eye test clear; dad BOAS 0, HUU clear and currently being shown. 5-generation pedigree; 5 weeks free insurance.",
+  url:"https://www.freeads.co.uk/uk/buy-sell/pets/dogs/bulldog/41910793/kc-regenglish-bulldog-puppies-from-health-tested-parents/view",source:"Freeads",names:["George","Cecilia","Matilda","Edward"],posted:"Posted mid-Sep 2026",imgs:[],
+  notes:"Only South-West KC litter found. Freeads PetSafe: ID checked, UK bank confirmed, 12+ yr member."},
+ {id:"l11",cat:"buy",name:"KC pups, chocolate & chocolate-tri — last 4 girls (Wigan)",type:"English Bulldog",kc:"yes",pups:4,sexes:"4 girls (of 3 boys / 5 girls)",price:2500,loc:"Wigan, Greater Manchester",lat:53.545,lng:-2.6325,
   lineage:"Dam 'Lexi' chocolate & tan; sire chocolate tri. Both parents health tested, clear of hereditary disease. Non-standard colours.",
-  url:"https://www.pets4homes.co.uk/classifieds/brrnxlojh-kc-english-bulldog-pups-wigan/",source:"Pets4Homes",names:[],posted:"14 weeks · ready, both vaccinations done",
-  imgs:[],
-  notes:"Reduced from £2,600. ID-verified seller."},
- {id:"l12",cat:"buy",name:"Quality fawn/red & white litter — last boy, reduced (Mansfield)",type:"English Bulldog",kc:"yes",pups:1,sexes:"1 boy left of 4 boys / 1 girl",price:2000,loc:"Mansfield, Nottinghamshire",lat:53.1471,lng:-1.2282,
-  lineage:"Pedigree includes well-known names; parents clear of eye, skin and breathing issues, wide nostrils. Some non-standard colour DNA ('not registered as NBS').",
-  url:"https://www.pets4homes.co.uk/classifieds/tmhq-zd7p-quality-english-bulldogs-mansfield/",source:"Pets4Homes (Freeads ad now gone)",names:[],posted:"~4 months · ready now",
-  imgs:["https://asset.freeads.co.uk/img/640x480/9a4144c95101d77f7f628dda02a011e8cd31571250561.webp","https://asset.freeads.co.uk/img/640x480/1b9443f35aacf79f74a6a2c4e905bdf7bc8ff58221306.webp"],
-  notes:"Reduced from £2,750 to £2,000. KC registered, no endorsements. Pro account."},
- {id:"l13",cat:"buy",name:"Quality tri-coloured puppies — reduced (Jedburgh)",type:"English Bulldog",kc:"unknown",pups:6,sexes:"5 boys / 1 girl",price:1800,loc:"Jedburgh, Scottish Borders",lat:55.4777,lng:-2.5549,
-  lineage:"Mum 'Cookie' DWKC registered with 5-gen pedigree (EpicBullyz, Rarebullies, Posherbulls, USA imports). Tri-coloured, raised with children and dogs.",
-  url:"https://www.pets4homes.co.uk/classifieds/kysase-24-quality-english-bulldog-puppies-jedburgh/",source:"Pets4Homes",names:[],posted:"12 weeks · ready now",
-  imgs:[],
-  notes:"Big price drop: £3,000 → £1,800 with all 6 still listed. Dam is DWKC (not KC) registered — treat KC status as unconfirmed."},
- {id:"n21",cat:"buy",name:"'Mini' marketed English Bulldogs — last 2 (Hungerford)",type:"English Bulldog",kc:"yes",pups:2,sexes:"1 boy (£1,800) / 1 girl (£2,500)",price:1800,loc:"Hungerford, Berkshire",lat:51.4155,lng:-1.5147,
-  lineage:"'Last of the Fire bloodline' — white/blue tri boy 'Inferno' and lilac tri girl 'Cinder'. KC registered 'if applicable'. Non-standard colours.",
-  url:"https://www.pets4homes.co.uk/classifieds/zoffirfan-rare-mini-english-bulldogs-hungerford/",source:"Pets4Homes",names:["Inferno (boy)","Cinder (girl)"],posted:"13 weeks · ready now",
-  imgs:[],
-  notes:"Advertised as 'rare mini' but listed as full English Bulldog — not a Frenchie cross. Phone number only via cover photo; be cautious."},
- {id:"n19",cat:"buy",name:"Olde English Bulldogge girls — 2 left (Wellingborough)",type:"Old English Bulldog",kc:"no",pups:2,sexes:"2 girls left of 3 ('Dora' light brown, 'Narla' tri)",price:1850,loc:"Wellingborough, Northamptonshire",lat:52.3028,lng:-0.6944,
-  lineage:"Dam full-pedigree Olde English Bulldogge (white & tan); pups born 20 Jul 2026, puppy-pad trained, raised with kids.",
-  url:"https://www.pets4homes.co.uk/classifieds/7ryae2l1n-big-chunky-rope-puppys-wellingborough/",source:"Pets4Homes",names:["Dora","Narla","(3rd girl reserved)"],posted:"Born 20 Jul 2026 · ready now",
-  imgs:[],
-  notes:"Alternative bulldog type — healthier build, notably cheaper than KC English Bulldogs. Replaces the sold Portsmouth OEB litter."},
- {id:"n20",cat:"buy",name:"Old English Bulldog litter born 1 Sept — ready 3 Nov (Hamilton)",type:"Old English Bulldog",kc:"no",pups:7,sexes:"3 boys (£2,500) / 4 girls (£3,000)",price:2500,loc:"Hamilton, South Lanarkshire",lat:55.777,lng:-3.9756,
-  lineage:"Both parents are family pets and viewable; pups raised around kids, dogs and cats. 'Papers' offered (OEB registry, not KC).",
-  url:"https://www.pets4homes.co.uk/classifieds/ytdtk7y-n-beautiful-old-english-bulldog-puppies-for-sale-hamilton/",source:"Pets4Homes",names:[],posted:"Born 1 Sep 2026 · ready 3 Nov 2026",
-  imgs:[],
-  notes:"Latest-born OEB litter found — 12–13 weeks old at a December pickup. £300 deposit. Priced high for the type."},
- {id:"l16",cat:"buy",name:"Miniature Bulldog F1 (reference — Salisbury)",type:"Miniature Bulldog",kc:"no",pups:0,sexes:"litter of 6 — all rehomed",price:900,loc:"Salisbury, Wiltshire",lat:51.0688,lng:-1.7945,
-  lineage:"Sire: tri British Bulldog (KC reg) x Dam: French Bulldog (KC reg) — F1 cross, NEBBR registered.",
-  url:"https://www.freeads.co.uk/uk/buy-sell/pets/dogs/bulldog/36097304/miniature-bulldog-pups-for-sale-f1/view",source:"Freeads",names:[],posted:"HISTORIC listing — rehomed",
-  imgs:["https://asset.freeads.co.uk/img/270x200/8e9309fb60cb662dbbef9bee7af5cdd0a99b46bb73257.webp"],
-  notes:"⚠️ Not currently available — kept as a price/type reference (~£900). No live UK miniature-bulldog (Bulldog x Frenchie) litters were verifiable on 11 Sep 2026; they appear only occasionally, so set alerts on Pets4Homes/Freeads."}
+  url:"https://www.pets4homes.co.uk/classifieds/brrnxlojh-kc-english-bulldog-pups-wigan/",source:"Pets4Homes",names:[],posted:"15 weeks · both vaccinations done",imgs:[],
+  notes:"Still live from August — price reduced £2,600 → £2,500. ID-verified seller."},
+ {id:"l13",cat:"buy",name:"Tri-coloured litter — last chocolate boy (Jedburgh)",type:"English Bulldog",kc:"unknown",pups:1,sexes:"1 boy (of 5 boys / 1 girl)",price:1800,loc:"Jedburgh, Scottish Borders",lat:55.4777,lng:-2.5549,
+  lineage:"Tri-coloured litter raised in a family home, socialised with children and dogs.",
+  url:"https://www.pets4homes.co.uk/classifieds/kysase-24-quality-english-bulldog-puppies-jedburgh/",source:"Pets4Homes",names:[],posted:"13 weeks · ready now",imgs:[],
+  notes:"Still live from August — price cut £3,000 → £1,800 for the last boy. Only Scottish listing. KC status unconfirmed."},
+ {id:"n23",cat:"buy",name:"KC blue-tri — last girl, natural birth (Sutton Coldfield)",type:"English Bulldog",kc:"yes",pups:1,sexes:"1 girl (of 2 boys / 3 girls)",price:1500,loc:"Sutton Coldfield, West Midlands",lat:52.57,lng:-1.824,
+  lineage:"Naturally conceived and whelped; 5-generation pedigree. Blue tri / lilac — non-standard colour.",
+  url:"https://www.pets4homes.co.uk/classifieds/qymu7vhoi-kc-registered-blue-tri-english-bulldogs-for-sale-sutton-coldfield/",source:"Pets4Homes",names:[],posted:"Born 12 May 2026 · 4 months, ready now",imgs:[],
+  notes:"Cheapest KC pup found (older, end-of-litter). ID-verified."},
+ {id:"n24",cat:"buy",name:"Licensed breeder — 2 blue-tri KC boys (Kettering)",type:"English Bulldog",kc:"yes",pups:2,sexes:"2 boys",price:2200,loc:"Kettering, North Northamptonshire",lat:52.399,lng:-0.728,
+  lineage:"Health-tested parents (can be seen with mum and dad). Blue tri — non-standard colour.",
+  url:"https://www.pets4homes.co.uk/classifieds/q2myvnzky-english-bulldog-puppies-kettering/",source:"Pets4Homes",names:[],posted:"8 weeks old · ready now",imgs:[],
+  notes:"Council-licensed (North Northants 25/00127/AWDB) and ID-verified; £500 non-refundable deposit."},
+ // ---------- Other bulldog types ----------
+ {id:"n25",cat:"buy",name:"'Rare mini' English Bulldogs — Fire bloodline (Hungerford)",type:"Miniature Bulldog",kc:"unknown",pups:1,sexes:"1 left (of 4 boys / 2 girls)",price:1800,loc:"Hungerford, Berkshire",lat:51.412,lng:-1.512,
+  lineage:"Advertised as the last grandchildren of the breeder's 'Fire' litter; white/blue tri and lilac tri colours. Registration 'if applicable' — treat as non-KC.",
+  url:"https://www.pets4homes.co.uk/classifieds/zoffirfan-rare-mini-english-bulldogs-hungerford/",source:"Pets4Homes",names:[],posted:"14 weeks · ready now",imgs:[],
+  notes:"Only 'miniature'-type bulldog litter verifiable in Sep 2026 (£1,800 boys / £2,500 girls). Not ID-verified — see in person."},
+ {id:"n26",cat:"buy",name:"Old English Bulldog — NEBBR tricolour litter (Barry)",type:"Old English Bulldog",kc:"no",pups:6,sexes:"6 tricolour pups",price:2000,loc:"Barry, Vale of Glamorgan",lat:51.405,lng:-3.27,
+  lineage:"NEBBR-registered Olde English Bulldogge type (healthier, longer-muzzled build). Not Kennel Club.",
+  url:"https://www.freeads.co.uk/uk/buy-sell/pets/dogs/bulldog/41909107/old-english-bulldog-puppies/view",source:"Freeads",names:[],posted:"Posted Sep 2026",imgs:[],
+  notes:"Alternative bulldog type. ⚠️ Some OEB/'bully' types can fall under XL Bully rules in England & Wales — check conformation before buying."},
+ {id:"n27",cat:"buy",name:"Olde English Bulldogges, self-whelped litter of 8 (Coventry)",type:"Old English Bulldog",kc:"no",pups:8,sexes:"litter of 8",price:1250,loc:"Coventry, West Midlands",lat:52.4068,lng:-1.5197,
+  lineage:"Olde English Bulldogge type, free-whelped litter. Not Kennel Club.",
+  url:"https://www.freeads.co.uk/uk/buy-sell/pets/dogs/bulldog/41911834/gorgeous-olde-english-bulldogges/view",source:"Freeads",names:[],posted:"Posted Sep 2026",imgs:[],
+  notes:"Cheapest bulldog-type litter found (£1,250). Same XL-Bully caveat as above."}
 ];
 
 const RESCUES = [
@@ -340,17 +318,20 @@ const RESCUES = [
   desc:"The UK's main English Bulldog breed rescue since 2001 (~200 bulldogs rehomed/year via ~150 volunteers). Dogs are only visible after you register as an adopter — a normal anti-theft measure for this breed. Their £5 'Owning a Bulldog' course strengthens applications.",
   dogs:[{name:"Register to view dogs",age:"",loc:"",url:"https://www.bulldogrescue.org.uk/c/adopt-a-bulldog/dogs-needing-homes",img:null,notes:"Register: eu.jotform.com/app/213224402730946"}]},
  {id:"r2",cat:"rescue",name:"The Edward Foundation",loc:"Haydock, Merseyside (UK-wide fosters)",lat:53.4676,lng:-2.657,
-  url:"https://www.theedwardfoundation.co.uk/available-bulldogs",fee:"Adoption fee applies (not published)",contact:"07891 138336 · edwardfoundationapplications@gmail.com",
-  desc:"UK-wide charity (since 2011) for pure-bred English Bulldogs; covers all vet costs while dogs are in foster. Apply per-dog; unspayed resident bitches not accepted; Scotland-fostered dogs rehome within Scotland only.",
-  dogs:[{name:"No dogs open for applications (11 Sep)",age:"",loc:"",url:"https://www.theedwardfoundation.co.uk/available-bulldogs",img:null,notes:"Site says all current dogs are under assessment — Blair, Tamara, Jacob and Veronica (listed in Aug) have been removed. Check back weekly."}]},
- {id:"r3",cat:"rescue",name:"Geordie Bullies Springboard Rescue",loc:"Ashington, Northumberland (UK-wide fosters)",lat:55.1811,lng:-1.5686,
-  url:"https://geordiebullies.net/category/dogs-ready-for-adoption/",fee:"Not published · includes 5 weeks free insurance",contact:"rescue@geordiebullies.net",
-  desc:"Registered charity rescuing and rehoming English Bulldogs UK-wide with full public dog profiles (age, region, kids/cats/dogs compatibility). Application + volunteer home check. Six more dogs are currently in foster (Neil, Fendi, Matilda & Jacky, Rolo, King, Belle) and may open for applications soon.",
+  url:"https://www.theedwardfoundation.co.uk/",fee:"Adoption fee applies (not published)",contact:"07891 138336 · edwardfoundationapplications@gmail.com",
+  desc:"UK-wide charity (since 2011) for pure-bred English Bulldogs; covers all vet costs while dogs are in foster. Apply per-dog; unspayed resident bitches not accepted; Scotland-fostered dogs rehome within Scotland only. Only one dog open for applications on 18 Sep (Blair, Tamara, Jacob and Veronica have all closed).",
   dogs:[
-   {name:"Hallie",age:"4–5 yrs",loc:"Hull",url:"https://geordiebullies.net/hallie-available-for-adoption-yorkshire-humberside/",img:"https://geordiebullies.net/wp-content/uploads/2026/07/Hallie-1-670x536.png",notes:"AVAILABLE · dog-savvy kids OK · dog-savvy cats OK · no other dogs"},
-   {name:"Brucey",age:"4 yrs",loc:"Bridgend, Wales",url:"https://geordiebullies.net/brucey-available-for-adoption-wales/",img:"https://geordiebullies.net/wp-content/uploads/2026/06/Brucey-670x536.png",notes:"AVAILABLE · teens+ · no cats · calm spayed female dog OK"},
-   {name:"Nigel & Norman (pair)",age:"3 yrs",loc:"Port Glasgow, Scotland",url:"https://geordiebullies.net/nigel-norman-available-scotland/",img:"https://geordiebullies.net/wp-content/uploads/2026/06/944daab5-6de8-4832-9d60-9969cf8e56a9-670x536.jpg",notes:"AVAILABLE · rehomed together · dog-savvy kids 5+ · no other dogs"},
-   {name:"Stanley · Sadie · Bear · Moose · Luna",age:"",loc:"Midlands / NW / NE",url:"https://geordiebullies.net/category/dogs-ready-for-adoption/",img:null,notes:"Applications now CLOSED (were open in Aug)"}]},
+   {name:"Janice",age:"",loc:"",url:"https://www.theedwardfoundation.co.uk/available-bulldogs",img:"https://static.wixstatic.com/media/8c5719_4ab77e8b5b814be6b730b9e3aa5e3fa3~mv2.jpg/v1/fill/w_884,h_807,al_c,q_85,enc_jpg/JANICE.jpg",notes:"Applications open — details in advert on site"}]},
+ {id:"r3",cat:"rescue",name:"Geordie Bullies Springboard Rescue",loc:"Ashington, Northumberland (UK-wide fosters)",lat:55.1811,lng:-1.5686,
+  url:"https://geordiebullies.net/",fee:"Not published · includes 5 weeks free insurance",contact:"rescue@geordiebullies.net",
+  desc:"Registered charity rescuing and rehoming English Bulldogs UK-wide with full public dog profiles (age, region, kids/cats/dogs compatibility). Application + volunteer home check. Six dogs currently open for applications (18 Sep); Stanley, Brucey, Sadie and Bear from August are now closed/adopted.",
+  dogs:[
+   {name:"Fendi",age:"4 yrs",loc:"Bristol",url:"https://geordiebullies.net/fendi-in-foster-south-west/",img:"https://geordiebullies.net/wp-content/uploads/2026/09/2c42c8c3-d520-4a36-b691-9521fd193d1b-670x536.jpg",notes:"Dog-savvy kids OK · cats OK · dogs OK (no entire males) · listed 7 Sep"},
+   {name:"Matilda & Jack (pair)",age:"3 yrs & 23 months",loc:"Blackwood, Wales",url:"https://geordiebullies.net/matilda-jacky-in-foster-south-west-wales/",img:"https://geordiebullies.net/wp-content/uploads/2026/09/82adb9b1-8273-4739-8e28-f64b045dd2f2-670x536.jpg",notes:"Bonded pair · dog-savvy kids 5+ · no cats · no other dogs"},
+   {name:"Princess",age:"4 yrs",loc:"West Suffolk",url:"https://geordiebullies.net/princess-in-foster-south-east/",img:"https://geordiebullies.net/wp-content/uploads/2026/08/88f980a7-5724-483e-ac04-6594ca105f89-670x536.jpg",notes:"Dog-savvy kids OK · no cats · only dog"},
+   {name:"Stella",age:"4 yrs",loc:"Wirral, Merseyside",url:"https://geordiebullies.net/stella-available-for-adoption-north-west/",img:"https://geordiebullies.net/wp-content/uploads/2026/08/Stella-670x536.png",notes:"Kids 10+ · cats unknown · calm dog-savvy dogs OK"},
+   {name:"Mr Bojangles",age:"5 yrs",loc:"Bideford, Devon",url:"https://geordiebullies.net/mr-bojangles-available-for-adoption-sw/",img:"https://geordiebullies.net/wp-content/uploads/2026/07/Bojangles-670x536.png",notes:"Kids 10+ · dog-savvy cats OK · calm dogs OK"},
+   {name:"Reign & Ronnie (pair)",age:"3 yrs",loc:"West Hampstead, London",url:"https://geordiebullies.net/https-geordiebullies-net-reign-ronnie-in-foster-south-east/",img:"https://geordiebullies.net/wp-content/uploads/2026/07/2e875f9a-0d42-4fdd-bda9-ec441e5f44ca-670x536.jpg",notes:"Bonded pair · dog-savvy kids 8+ · no cats · no other dogs"}]},
  {id:"r4",cat:"rescue",name:"Dogs Trust",loc:"National — 23 centres UK-wide",lat:51.5312,lng:-0.1027,
   url:"https://www.dogstrust.org.uk/dog-advice/getting-dog/breeds/english-bulldog",fee:"Standard adoption fee (see local centre)",contact:"dogstrust.org.uk/contact",
   desc:"The UK's largest dog charity. Bulldogs and bulldog crosses pass through its 23 centres regularly. One rehoming form matches you to dogs; availability changes daily.",
@@ -365,33 +346,33 @@ const RESCUES = [
   dogs:[{name:"Live search",age:"",loc:"",url:"https://www.bluecross.org.uk/rehome/dog",img:null,notes:"Use 'Find a Dog' and filter by breed"}]}
 ];
 
-// --- Full photo sets fetched from each live advert (11 Sep 2026). Pets4Homes entries are image UUIDs ("|png" = png); others are full URLs. ---
+// --- Photo sets fetched from each live advert (18 Sep 2026). Pets4Homes entries are image UUIDs ("|png" = png); others are full URLs. ---
 const IMG_EXTRA={
- n1:["1bd758af-e7c8-42ce-9b05-0b130054d430","3ff0a7ea-e3cd-4c5d-a761-7a69fd2cb52b","acfb82ca-574d-4576-a7ae-72efc5c65bb3","3e72c0d4-f20e-412c-a039-172cde548431","156ccd17-a250-4821-a5cb-0d770c0a012c"],
- n2:["0d215b9d-8dfe-43f0-bf1a-b74977760438","e550ec5a-34e0-4e98-8b25-24ecbf363a45","4dcaef45-55ed-48a0-9c84-8e986e4969f3","90197c56-34e7-47ca-a552-9891c63f214c","eb9ce105-63f2-47b5-91ea-b573265d4df8","32818e94-f43b-46af-be95-8c5c2ba80ea4","ba385adc-601c-4b84-8076-4f7c78e126a0","799cec5b-052e-463e-840f-756502c1ea95","ae4446b0-d899-4d33-a7bc-f14718d711c4","1f6d813b-0cb9-4fd7-9033-f1f3d2cd70f8","12d6d457-2a09-4827-9fe1-79f06eaad476","665ffe5b-50a7-4c2d-b563-89b741bbae9c","5ca04fd0-1c05-4689-8256-589fc5c4b142","ef674f4f-7d7e-4ec4-bb5c-63ef86d12d61","455dff11-3260-4f50-ad53-c059c9db57bf","519a5ea9-f6b4-4612-a57c-591dbfe5f394","6d268898-ead6-466d-afbc-7693283bad8f"],
- n3:["758ae2d9-64e6-4a83-aa9a-15e8a591d2ac","10e95dd7-0303-405b-9214-3d4e59cb959c","fe8dd3d5-f82e-4629-828f-b624e157bb09","e9c7bbc2-7e75-4d59-94e9-8d12b1991da7","ce3df97d-59ed-409e-afdf-a8897817113c","aea368af-5e05-45a7-9ef8-424984e2e36a","1fb8450a-721e-48c9-9226-50326ce2b6da","956df51f-c897-4120-a9ec-1e5809537a9b","f01baa45-385a-4eab-a514-969c9b1bfdfd","c23b6523-ea9c-4b03-a12d-62f2a6799086"],
- n4:["e0f3b935-3a66-4985-8c5e-5a0e02fa3526","847bfec9-9386-4215-96d6-42a6a42d6ded","e41aebec-e887-49b0-a46c-3e3bc86c5d78","662a564b-acb8-4e4d-a7a2-a43df5b52765","75f28d2c-01ea-468f-8a82-7936e6048c81","9520c7e5-89f7-4cef-9b10-bb3ee9b8df41","27d91d1d-1ce8-4829-850c-a0e62f0e64c5","170520e0-02db-4b60-be1a-71b698aef38a","26bed690-ea31-4da0-9135-8ec0d992a132","55ea9579-8f4c-4cec-970d-3a5e1985365e","a06a1f2d-9ee8-4353-af1c-872bbc8fa061|png","1806ae7e-8c8d-4bf3-bee2-731f61c80e8f","d52e04da-df78-4c0f-a6be-61e898cce30a"],
- n5:["216e4b35-2d71-4b3e-9796-eb42f72af644","b7802d8d-68d7-4a0a-8c26-a8525dbd4fc0","73b3ae87-ad72-49d9-aa51-6553a7021a88","1aaaedbc-9619-4dab-9775-4d1201cc6cf4","5d3b9988-4625-4901-9c2c-41f434567206","d2a1c918-771e-4322-aec0-d8396c314d12","ffb2f829-07b4-41c2-9fe8-c423655ea546","588cb5e9-b932-4868-9729-a746131302cb","d6c54387-5567-409e-8d8e-bb2aea68a66f","99b4cf30-20e0-4160-8f8d-6d5edd60d8f7","6459ec83-e8b4-4184-880a-2d7fbda49d21","32fadb7c-196a-4b7c-9fb1-1d2a9411da65","f9617a15-833a-4678-becc-11c1862f8eac","27457e2f-f9d0-4390-90e8-7b12b65d4535","fbf12c8c-b786-4719-9da2-81f56e641370","c90cde65-0a27-4421-a6b9-079bbeec938c","ba9fa13b-8f1f-439f-86c7-a4d22d3466c2","b01ed1a4-f862-4cfd-91f2-a2d6a159fd49","0d1faf97-6493-4d76-b4b7-8b48dcf65ffd","64355aca-2c72-4f3c-9365-fcc1326421dd","7fb9ba92-a93e-489a-9c82-919dece2cfcc","ec1bc72c-c10c-4e15-adb6-a55d9cf468c4"],
- n6:["b622a2cb-2e03-4947-87ce-8baa82d542ee","467062f9-cdc9-485a-b37d-209fa2dd2881","cd66d3eb-041f-4d97-8c7f-7daec26059e3","5f054d70-e6f9-443d-adcb-fd01a2c00ea2","f6e0fd84-8e1d-4596-a16c-d0a1b3df3970","20691d09-fbef-4109-b77e-a8cf6218232e","c7487566-51a0-48b9-804b-80cb1c998c21","a42f206a-76a4-4561-8a6b-789c65da5b55","e6ff47ab-f42b-4686-9cd3-b2466520cd8a","b5e899b8-7e8f-463b-8fdf-0c350211710f","d881f253-9dd9-4181-8f8c-a1cb3d95f6cd","8e5d1b53-a4ac-4699-9f9a-b3307508b54e","d8f8b5c0-d127-415d-9087-80c640308c42","da7bdfb4-d0c3-44a2-b1b3-991ca7ef27e9","52e8a9fd-410b-4b52-ade8-b2191519032d","828daf86-9000-4618-9f28-3b997cbb32ff","606b714c-d1f5-468c-91ee-d33c06bcc7ff","9bee557a-5ce1-4f1b-8f94-bcdd24ed0c87","fdd8d122-0419-4594-b0cc-10b8cf4b297a","af97149a-4715-4692-a083-a09f16c554fd","67b5e731-ba76-4351-a954-779ecccf5bf0","00b5b866-417e-4abc-a631-713c84688a42","1844e5ea-4df6-4d52-8504-64a7fce29eae","a9ec1013-018a-4454-a813-da25def6bafb","005bae6c-ffd6-40fc-bfd5-a5e8c2646709","7644d353-13a7-41f7-b9fe-dfdbfc05ba15","f01933f5-f9b8-4ec1-a16b-0697547675e5","ddb05b5e-9b06-4f7f-a18e-b0018e1051ec","5aabc4ce-45b9-490a-883e-eb9ce54ba6bf","dad1e831-da65-4537-bde8-75c24e92f7db","3e68fa8d-b19d-458d-8bde-149c66806762","4f46b09f-0200-4dd7-863a-feed5458a77c","e3eaf8ba-e70e-4f9f-8bba-fbf0a8fa9d7e","832a6dd1-44b0-46df-b168-5695719c6aef","765f3170-7496-40d0-bebc-6b186fd67037"],
- n7:["e7823414-9935-4f20-9ec8-364eaf05ff13","9f27a89b-9e68-4789-a9b1-10f5a8679ed8","44c2d69d-a961-46c6-af7e-630b9c8dceb6","88067a13-683a-49c2-9ad2-04eb55b516f0","ad5dfa1b-b299-4969-abd3-dc97256c7e95","1293d7be-c50d-42a4-92dd-30b4ca353c68","5118e59a-07b5-467c-b9bf-cf5c8683faa8","546b0cc0-05c0-4f63-9b64-8c0ad928791f","3c992e78-2c40-4491-a6f9-89f72a90250c","7f192a1d-7dc0-42a7-8f68-069ab61fd694","d2b128ed-b897-48cd-b21d-fe1344735e8d","db964966-48dc-4e08-9db0-b7140a667338"],
- n8:["d5aca008-3020-444e-952c-72e25b433748","8ed3f2b4-a365-436a-aaeb-b75a03c7c601","48792b29-c526-409c-a994-d4ce65138ede","61b40ed0-25e7-4e16-9b56-48cdda73a3f4","1f79ea76-6a1f-4125-a6eb-6ac080a65250","f82c69f5-f538-4bc7-810b-6e9ade3d32d3","7fc0fcec-6d4a-47dd-ab8d-f6d63b94bcbe"],
- n9:["11616cf2-fbce-4cd5-84d4-2b848a931d80","e4b0e3fe-52cb-4b88-95fd-5b184b4fed28","314b634f-70c0-47e0-b3e8-994ca6f4b461","b3d3a79f-248c-4d6b-98cf-dbda28f1a3be","414f7ae9-0225-47d1-b6d3-0cfb9a2d361f","dad258b1-4524-426c-ad80-64e214a13b0a","0c2eb5fa-078f-4cd2-b9e1-cd72375323fa","4b1d9558-173e-4727-970b-c855e8c66bcf","84c9f018-5a01-4e62-aefc-b8b481a91e05","9bae93d9-669b-48ce-9114-af6d0a422626","81639f6c-5db5-4f62-8cdc-205d3041f180","354b4f7e-f431-4713-9dda-b2d0678e043c"],
- n10:["3eb3282f-642e-4aa0-bab7-dae9922320e4","254210f0-e5e2-42d5-91df-446ddd64d30b","7cecf06d-3974-4f73-90b8-18c8a34e2c58","38a4aadb-332a-4f07-91e9-c608825ba768","1e10becc-6e64-4bcc-a656-416ef9d9574b","acb6b0c2-c814-4181-a31e-c2cda3cd0716","702e90cf-ec43-4745-a163-b5bb4251ee15","8eb427de-c807-4e78-aba4-affe19bbabbc","19a4f31c-d73a-46d9-add2-31ef053b31f6","dd8d33d6-8311-4e27-8797-be3a9a966726","fb03bd3f-6d8f-4e55-a721-4090b34ceeae","969af9ea-2c2f-476c-91ef-4844875be18f"],
- n11:["1fa599cc-138a-44c5-8e61-dd7b4ad4987a","410196e5-f0a9-440d-b8de-35f7d029a547","f954a6cb-1665-4f73-afb8-5908b9771ca9","94e0526e-03a8-4a10-8078-f09cf11dda94","ba2f6d11-a0f0-486b-a112-ea91dbdfe4a3","c6f347ab-8c34-4275-b2aa-5c05bfac5cf4","0aab4e1f-9417-4c2a-97e8-a8c557b09b46","551fbf2b-10ef-4c2e-bc0a-63c53821c853","a25b38ed-156d-42da-b088-4ef8e54d94e9","9ce59cf7-949b-404a-9a8c-5d4e154046cd"],
- n12:["eefcbf86-b227-4198-a2a6-79df52c3564d","07082fa3-1e51-44f2-800b-6cd0bbaa62d6","4e6af52c-e6f4-4ae5-a7d3-7542f7071e38","dfc0c58a-fc0e-4dbf-bd12-60468c7c8c66","ea46de67-5bbd-4fe2-b189-af6038d1d605","623816da-85ee-472a-afc1-6b9580a02c8c","338eca43-393a-4d42-bcd9-7130d9145ad7","6a342d63-a8a7-4416-b118-949e56015793","7b6f0944-2dea-4d32-a930-27d009477d4a","f8c6968a-9982-47a6-9b27-6e5cd82147b2","7bd35fdd-fc11-4b1a-8148-18a09c4635c0","b7315319-c1d2-4438-8f3f-246a7f2d2616"],
- n13:["5b5ad56d-c43f-4bc0-b2e5-5aa5d6db3256","842b9c24-d2f4-45a3-b788-9cff7fa0fe86","f4ff5bce-42a5-469e-bc22-4406864e644b","687e607a-7468-4e17-960f-3aa0363db8e8","33300d0f-6bbd-4958-b49d-a4e03bc47759","f4f617fd-7484-4e8c-9ed1-ffed844b5be2"],
- n14:["16988ab9-2615-4939-9d4b-5d71306b9555","10780c37-e2f9-4ce8-9cad-75914a46bea4","67c6598a-786a-4221-b184-f67874d38178","9531518e-8032-4b7f-8808-7f8139228e81","032e3ed9-fed9-4b95-bddd-3c58cee52f21","1cc110ac-f24c-4d14-aa72-bfd36cb86060","fa7c5d45-c86a-4d12-802d-e7439fcdb070","efc4378d-72e2-420c-91ba-9cb003b177e8","1713d140-c065-4e91-92b5-82ef849a53b9","750a4a60-191d-4820-b946-7518f3c792ba"],
- n15:["25622004-c0b2-4969-9795-de8a9dbe4b9a","699003f9-310c-46d1-a969-20aa90c5661a","d117edf5-93ce-4678-948d-c771a8ed8920","1030e4bf-74c1-4202-8f34-9b0d8d7bfbd4","52ebdb3c-2332-446a-ac73-20b6419bc218","e31d6f52-4ae0-4df0-b491-7700d03acffa","a565b88d-4582-4576-9c1d-1605838c8924","a2a9a887-4296-42fe-8e26-fd895a63cf56"],
- n16:["d6c5b59b-3308-4c1a-979d-a75f95dc5781","065ccae9-810d-45d3-8073-64c72ae8aca5","203a0481-de43-4e34-a237-295d14582ebd","e258029b-22fc-4cbd-a800-a7e305d20011"],
- n19:["cdb00daf-9807-4b89-96ee-4906749515d4","52de9b3f-edbb-4d41-866a-9cd673c956bf","b2d90b42-351d-4662-83a4-89afd6307679","2d0c4692-315e-4059-b779-45f72c6ccf14","6741bb5d-31d4-4cf8-bfeb-347388dc218f","4d0c5f61-a218-418a-bfc8-5482a01863a9","907189ab-02dd-4331-a3e7-9977dbcf2b9b","7a93c5da-b26b-4dd6-899c-6a82ae3d6c69","87dc2951-067b-491e-8597-002b0c0d73dc","98db1ce2-b55e-4e37-a71f-85f81477918c"],
- n20:["f1feb24c-6962-4329-b8b9-8b44d4d16fc7","7dc42950-2dc4-41d5-8aec-9c0f21e434f2","efc60928-f00b-48a6-aa6a-2de7801b9031","e1d44f27-cf9f-4a8f-9c76-eec69ca74eae","7d1971f1-8c0f-40bd-8bc4-22424d93859f","1aaeb220-9433-4428-95bc-8d33fb3bb499","7216a99f-a5f1-4ca3-97ca-8d6eb5895595","fe175783-6a8f-4183-b240-21698a8839e8"],
- n21:["e828d1fd-c4f3-4e35-ac24-5f19298714af","67fb5f7c-5135-4230-9dea-4c90eab0ccae|png","651b6fd2-9e81-40b8-a2f4-3848c6d7dfe6","a9c247db-e8d9-4eef-ac4c-ea651fa309ae","edf020e2-0329-4b93-b518-f6af6f9c84ae","672507c5-1254-471c-bd6b-74a2c5000b67","1086e9b0-0544-4c1a-b713-1b2a5fd2561d","e1dc9bef-cd1a-4ddd-a308-08bef13c238e","91d92952-61f4-4a73-bfa8-99c1f3442c84","d2b9d54c-ee7e-40f9-8bb6-40dedc8d8e4b"],
+ n1:["156ccd17-a250-4821-a5cb-0d770c0a012c","1bd758af-e7c8-42ce-9b05-0b130054d430","3ff0a7ea-e3cd-4c5d-a761-7a69fd2cb52b","acfb82ca-574d-4576-a7ae-72efc5c65bb3","3e72c0d4-f20e-412c-a039-172cde548431"],
+ n2:["1f6d813b-0cb9-4fd7-9033-f1f3d2cd70f8","0d215b9d-8dfe-43f0-bf1a-b74977760438","e550ec5a-34e0-4e98-8b25-24ecbf363a45","4dcaef45-55ed-48a0-9c84-8e986e4969f3","90197c56-34e7-47ca-a552-9891c63f214c","eb9ce105-63f2-47b5-91ea-b573265d4df8","32818e94-f43b-46af-be95-8c5c2ba80ea4","ba385adc-601c-4b84-8076-4f7c78e126a0","799cec5b-052e-463e-840f-756502c1ea95","ae4446b0-d899-4d33-a7bc-f14718d711c4","12d6d457-2a09-4827-9fe1-79f06eaad476","665ffe5b-50a7-4c2d-b563-89b741bbae9c","5ca04fd0-1c05-4689-8256-589fc5c4b142","ef674f4f-7d7e-4ec4-bb5c-63ef86d12d61","455dff11-3260-4f50-ad53-c059c9db57bf","519a5ea9-f6b4-4612-a57c-591dbfe5f394","6d268898-ead6-466d-afbc-7693283bad8f"],
+ n3:["d76030a1-9192-4ca2-94fd-d36e761aafd5","431c7da9-bab0-46d0-9e36-59f7509fbca9","0e014f7a-7ac7-4201-989b-65c942de3ea8","630e0fcb-a576-4797-8e86-8d5ca98c6f17","fcb7ba06-bc8d-43eb-94a7-ff51721a2bb5","d839dca1-5165-4d39-99f6-f1b9e06b195e"],
+ n5:["90eed813-bab5-48f4-a62f-0a1125917dfb","f20b5930-01bc-4211-b9d3-9d0a0a0cca7d","508195e0-f631-4f87-9dd4-06614c23fc6d","0fbf0d88-e735-4bf9-81a8-34c7bacc8aea","e01f739e-d949-4cad-bfae-0185e81fb816","34544452-a390-463f-af17-095d3f27e731"],
+ n6:["b4358a5f-59e9-4371-91a3-d9665b541221","8516ed1d-3683-4590-8806-7d7bd2b8d8cf","67a06c9c-96dd-4d15-8b0f-e67251296fc7","45a81095-a870-4961-a4fa-73fcd264263c","1b0bc795-ea80-43ec-accb-7375c1442923","c8c4012a-ff4c-4601-b4b7-59e6ac8e2b8e","0868a347-65e0-4f4d-9d3b-2dbf2747568c","53cb12fc-e6d9-48a4-acf5-4d5bd3ac3c96","ccd7c0ab-cd79-480f-9ad5-9a8a7265cff9","51147600-4761-4d1b-93d4-8cf30b368fd9","f16270be-eff1-4931-a011-c9b3b6cc9cf8","e41aebec-e887-49b0-a46c-3e3bc86c5d78","9520c7e5-89f7-4cef-9b10-bb3ee9b8df41","27d91d1d-1ce8-4829-850c-a0e62f0e64c5","26bed690-ea31-4da0-9135-8ec0d992a132","55ea9579-8f4c-4cec-970d-3a5e1985365e","e0f3b935-3a66-4985-8c5e-5a0e02fa3526","02c8944c-3a72-4702-8880-94e234049f8b|png","ae29a829-8c02-49aa-a26d-aee866e1e347|png","3341c8cb-9425-46b5-a212-1a69b422ccbb"],
+ n7:["ef987662-2700-4620-9f88-0cde4ab093b7","ac8540ec-72d1-49ee-abff-ab5fa6a7212f","ef14d2e3-27b4-4554-a9b5-d03221388771","1848a3fa-b973-4b5f-a60a-6faeaac83d85"],
+ n8:["f20047e2-e08b-4984-8b03-96d291fc3314","1b53f01c-6f14-407a-a732-62a6a70d3d71","9a17b8a0-3c60-444a-8408-fbb0913f7dfc","77bbe7d5-402b-419a-bc80-43238dabe4f3","865d090f-6bf9-42a7-9c8f-8c742752f854","3acecf83-cc11-47d0-b449-2537189c1487"],
+ n9:["c8710451-07a4-4a2c-bd8e-6e0dbb4fbc0f","b3d3a79f-248c-4d6b-98cf-dbda28f1a3be","414f7ae9-0225-47d1-b6d3-0cfb9a2d361f","0c2eb5fa-078f-4cd2-b9e1-cd72375323fa","4b1d9558-173e-4727-970b-c855e8c66bcf","84c9f018-5a01-4e62-aefc-b8b481a91e05"],
+ n10:["a4c58613-d46a-4078-bbf2-93276c556b03","d1bfd3c4-8e02-4abd-9312-0c867e2c1ed6","ed09a573-45a4-4fbf-b2a0-2d015c7fe408","aa887e0d-3947-4692-b870-39356d2f7e4e","38104f63-600d-41c8-b8ec-6c86c7e5f87a","5f60c9bd-20f4-4f61-8d56-c48ec9f0e9a7"],
+ n11:["3eb3282f-642e-4aa0-bab7-dae9922320e4","254210f0-e5e2-42d5-91df-446ddd64d30b","7cecf06d-3974-4f73-90b8-18c8a34e2c58","38a4aadb-332a-4f07-91e9-c608825ba768","1e10becc-6e64-4bcc-a656-416ef9d9574b","acb6b0c2-c814-4181-a31e-c2cda3cd0716","702e90cf-ec43-4745-a163-b5bb4251ee15","8eb427de-c807-4e78-aba4-affe19bbabbc","19a4f31c-d73a-46d9-add2-31ef053b31f6","dd8d33d6-8311-4e27-8797-be3a9a966726","fb03bd3f-6d8f-4e55-a721-4090b34ceeae","969af9ea-2c2f-476c-91ef-4844875be18f","83caaf67-894b-4778-9b1b-289f525254f5","d981201c-9585-48de-9752-20fa6c7750ea","ab7d37ea-67e1-4dcc-9dfe-86d136fac94a","d65e1405-8ac3-4c3f-9d86-da2326701b89","bb85f98d-ed1e-40a4-8ca6-10af8ff25cce","4ce30579-3501-4db8-ade6-5ec560c84ec6","70b0b8bc-d98f-4431-a385-3d036a9ac98e","a46d9aef-d146-42b8-857e-768d5b3e968d","9161634e-30d4-4bd7-8b48-3960e2e10aae","5cf36614-12fb-482f-85b7-40aaa5eb97ba","4eb0a385-9081-4eba-aeb0-968568136d3f","0d7951ba-1c49-4655-afb2-f33c387b0803","bdf13f12-9469-4ea3-8fc1-4a35f2e14b06","b27d3208-7be2-4639-96ec-828eb33a8398","69bf78ca-1d6a-496b-bb04-27629a6ceff9","c64a0409-5abf-4ea6-a5b8-efc8cb022eda","3e50ea7d-bfed-4471-9c2a-c3be6dc42024","fdba7174-d043-429a-8f1d-c95a416b4e86"],
+ n12:["a5ac46dd-15d4-4ee5-abf3-bfbcd57cc946","123a7cc0-3317-4bf4-a5a7-4b81505c529a","14dd87c6-27b0-4c4f-b216-65c488470ff1","410196e5-f0a9-440d-b8de-35f7d029a547","a3684e2a-79c7-41cc-836e-4b74e3f14e98","65a5cc9c-c604-4a51-85ca-8a7cde47e479"],
+ n14:["1deabc7f-2285-486b-942f-4deac3aa654e","828daf86-9000-4618-9f28-3b997cbb32ff","7c39becf-5c21-4bfa-aee0-258c9df3c8c7","467062f9-cdc9-485a-b37d-209fa2dd2881","8e5d1b53-a4ac-4699-9f9a-b3307508b54e","606b714c-d1f5-468c-91ee-d33c06bcc7ff"],
+ n15:["2ed5d33c-ff89-48aa-8ea2-dff7ff2c5ceb","200b3833-a080-4e8f-bcf8-143d5e779bf2","e76f680b-5c50-4611-9bff-75231f402e7c","63d8f6a2-f20a-4c55-bb0a-bbdfe3a12fe5","4982605b-6ced-4326-b6af-5eef34e46e9a","e665c7ea-4656-404c-ac0a-fa9af82aa108"],
  l3:["https://nimages.champdogs.net/36/p17191137.webp","https://nimages.champdogs.net/36/l22587130.webp","https://nimages.champdogs.net/36/p94769254.webp","https://nimages.champdogs.net/36/p90553725.webp","https://nimages.champdogs.net/36/p30732098.webp"],
- l4:["https://nimages.champdogs.net/55320/l91368671.webp","https://nimages.champdogs.net/55320/l25259378.webp","https://nimages.champdogs.net/55320/p88157743.webp","https://nimages.champdogs.net/55320/p45719613.webp","https://nimages.champdogs.net/55320/l83856705.webp","https://nimages.champdogs.net/55320/l6294794.webp","https://nimages.champdogs.net/55320/p60347937.webp","https://nimages.champdogs.net/55320/l14205379.webp","https://nimages.champdogs.net/55320/l45054433.webp","https://nimages.champdogs.net/55320/p86613616.webp","https://nimages.champdogs.net/55320/l86405535.webp","https://nimages.champdogs.net/55320/l70373238.webp","https://nimages.champdogs.net/55320/l12884130.webp","https://nimages.champdogs.net/55320/p23987878.webp","https://nimages.champdogs.net/55320/l97266966.webp"],
- l7:["688bc5fe-f734-4c4f-bc8c-7cad3c453f9e","830ccf90-86a4-456e-89bb-4a8661599ff1","75ea3457-1467-4082-bf3e-ffcdfe9dfa8e","bbdecfad-a1c2-44fe-b71c-18e4d752fc7e","7bc79d3b-080d-4603-b2d4-55dfffa0939c","3f66fa86-7185-4ab9-ae52-9d2bd40f005e","bd35f4cc-76f8-4fdd-a3bc-750354fea914","e732891d-c5eb-4557-bc7b-c4117113755a","0bf29472-752e-4fc1-baeb-296f9b0c3fd5","ec566a40-ec82-4f5f-80c6-8a7d039db12d|png","0c68c1ec-ff5a-47f5-8fa8-7c7deac47398","4d8d8e11-6612-4278-a3c9-49707df6f5c4","62fd2c45-d6f0-4a18-b69e-4d86ad9752cd","f03e5146-829e-4ac9-9168-83532527cb67","f6d893d6-e97d-4e7e-9b01-062e2c010a1c","3f19b170-424f-4de1-abb3-34b19039484d","2fa6372f-bf59-4a3a-8fc0-2115c1eea75b","7057503f-f9c4-4f58-9771-5ed948e1153f","81f4a5b3-9f6f-493c-b74e-499649fe8cb3","28c79e9f-9eca-4523-a01a-7a6945227964","91d3689f-15fa-4b36-8a61-eefe3be024b5","e11b2596-4c12-4124-b2d2-cf0f56976634","9cc0d2a4-0aa6-4580-9749-992889c33009","b4c84ab0-6aad-4dde-9bb6-1e1bc8300c81","a1240ff2-8093-427b-8535-36eb0fff54d2","ff054920-ffdd-45d3-8cdd-28c7e0afe523","45af05a1-7dcb-4b06-95cf-02df60c22e65","031fb7dc-75e8-412c-8b1b-8f395e530c04","d3415264-b0ed-43c0-9270-4318bcf444a7","dc344270-dce5-4c16-a55b-903453a076ae","b2d1207b-e802-4886-b66a-315a9aa86b80","43d4ebef-0d76-493d-bc8d-b799007f9d03","9a152b98-5c28-4563-ba47-90360120a7fa","1d59f003-8644-4598-b434-aad0ec85778a","18d170bc-708a-4c3a-b284-2131b12f1d26","5fd6fbc5-7988-4061-9f9d-cf44c6385f75","f14f1cff-f31e-48df-86d8-bcb4a658244d"],
+ n16:["f65b795c-e9a1-477c-a240-0e7c683b1572","bb549ad8-ebe3-4ddf-aed8-3834536ec791","1825ef90-1d52-45f2-a57e-c04c9f74ae53","61576f65-fccd-416b-be3d-1df31cd0e303","022d84d5-e7ff-4fe2-bea2-ea18ab6dd5d7","774df8f2-e575-4733-90d3-de7d1b2b75b4"],
+ n17:["e3dfe849-6e97-41c9-9200-0f30e1918a42","7910c63e-6e4a-4390-acb5-a7b547d0ceb1","a74d3dec-36cc-482e-bc0b-0d868a51c861","a978112b-4075-463c-8bed-ac822652cb0f","f3833fe9-2601-4fc2-bca1-3efbe1e3919a","88bf457e-2b2b-45ff-9c2e-4250416a8db8"],
+ n18:["e5ce6a06-e92e-4f48-b020-6a63cc561901","4e7b812e-aa06-484c-bace-ab5e12146d71","5961c39b-341d-4d35-80b1-78220e68ad73","2362a5a7-0326-4461-be20-2cda37a1aeef","df4dfd8c-5bc5-4521-bc7b-527c532ac330","4f795177-1d75-4a0d-832b-7207b7262acf"],
+ n19:["70579ac8-ab64-4f37-a2eb-a69fd5be2cf4","6d4d7b11-4e6b-48dc-85a7-59ddacbe24fd","eef3ecb1-91f6-46dd-bcd0-cf74c4d56034","449902eb-08ec-495a-9dad-970051dcc459","d444d8b0-e688-4c60-a28a-a4c95a5663ca","f5d927b9-a0de-42bd-a7f7-80f810ce4cae"],
+ n20:["7fb77eed-5be5-4e5f-a5df-e1a976403f30","eb99bc78-4d13-4d5f-8ef2-ac5775c601d3","ce627e56-faeb-47d4-8de4-2cd33709f989","450008fd-0b5b-49a4-957d-86408f5e4f62","2dd0479f-4cea-40ef-94bb-2b2b067b2fbc","f3ecb09f-8eef-43f1-8109-d8594348b92a"],
+ n22:["https://asset.freeads.co.uk/img/640x480/fe1dc5f8a3dcda02a4c4b2b1003ed78dfb0b699437442.webp","https://asset.freeads.co.uk/img/640x480/376e57021b1a6ae61749650116501aa1940f4c6c19709.webp","https://asset.freeads.co.uk/img/640x480/5b933c417adeb4b87035e279d2a8cbbc582ed77292062.webp","https://asset.freeads.co.uk/img/140x106/fe1dc5f8a3dcda02a4c4b2b1003ed78dfb0b699437442.webp","https://asset.freeads.co.uk/img/140x106/376e57021b1a6ae61749650116501aa1940f4c6c19709.webp","https://asset.freeads.co.uk/img/140x106/5b933c417adeb4b87035e279d2a8cbbc582ed77292062.webp","https://asset.freeads.co.uk/img/140x106/7719aa7a14f64d4d7a683e76eef5194bebb4a19c55131.jpg","https://asset.freeads.co.uk/img/140x106/37691e901d96862e18b8e6dfa7d763f11d17bfc66662.jpg","https://asset.freeads.co.uk/img/140x106/97762702f62a792b740c46a0f27cc2e9ce8ec33078117.jpg"],
  l11:["a2cba0c6-7df2-4973-8bd4-5f1f5d27f66e","dd69cfb7-9067-4435-990c-20523323b7b4","6501b47a-639f-4c0a-a756-7b6a50132d8e","132b0560-bf0c-4464-9c0e-7eb450014db1","9b0f92f3-d5b7-475d-842d-22ca0790f888","30c26979-73de-4f13-b2d0-fe86e8a788cb","718bd09c-4b5f-4b57-88c7-3e7d27837ed1","0d67deac-61cf-460c-8f4f-cbea904a23c3","a6e5437c-d22a-4836-b2ef-60fc8bf726ad","7198a780-e51b-4918-b2d2-a6dd4beacb08","03de89b0-4a35-4133-8e14-f7cb53d02e79","34f06c45-6603-4e77-bc09-14392c3f9edf","abe66783-ad3c-4199-bdca-f70df9955a82","e512e3d1-e987-40ac-b333-7dbc95bac571","2b793c0c-03c3-4e21-8bc3-1864a530ae85","2d8df436-ce86-4800-913e-546af483bf2e","ab800f3d-f39d-463e-9358-3a5fa72ae60d","b55fb89d-5d3c-4752-9d08-ecdbd07d6dca","5d45a7ea-22e9-4c69-ae31-2e2dc350a066","89d62b41-7c42-47d0-901a-32e7d0dfa23d","d99bf2ce-0547-4f29-b1cb-1eb37ba72e10","6b88912c-7233-4123-834c-f4eb9add4419","96e7897e-8e79-4da0-87f2-f77ce0605fea","3f592c5c-d527-4427-9823-ec38338c0489","d2cca20c-cb90-4562-90ac-120627b4d066"],
- l12:["https://asset.freeads.co.uk/img/270x200/9a4144c95101d77f7f628dda02a011e8cd31571250561.webp"],
- l13:["a28ff754-6fe9-4a2f-b691-a59a1fd908ba","190af515-ede8-4a21-8d23-e6211131789f","a7b39e8b-7f51-4eef-948a-f4ed96b05d23","4897c9db-3a28-4326-a2fd-6169eb0f5ac3","0e8c1af2-3072-4d45-8220-12ae8a6ef0d4","18995cf2-54d6-4c78-8ea6-8164edee050e","c5d96d04-427e-40e2-a40f-67f17afcb8b4","9feada30-94f6-454d-878d-09698ebd16a6","f0717b64-be5e-47db-bd12-314b1a53f893","f7423009-c0e5-4d98-95a3-0c5444b0d1a8","5ba6b7d8-a670-4aac-b0f0-7e2d8232913a","823d5a9f-88af-42e2-871b-7d5b1c7cf411","d342652b-a707-439a-980e-6726f77cbd3b","8dcf7654-ffa5-462a-b40d-980fbde128c5","89d37e71-6d0e-44b1-8663-3ca5996706af","b547e662-c633-4e89-8cbc-b383bc4517c8","ff12bce8-af3f-4c44-a192-0f1f30da6f0a","d594ffe1-c83f-47e7-baff-233d84d136a5","69c7e130-a8eb-44ac-bbea-6cf520cb7733","a8db0eac-3ce7-492c-a322-94245d510307","397070a6-ddaf-40ea-9fce-70825f694c01","87c001e9-d245-4280-8b63-80fe8f57c34a","dcb3c2d4-4417-4524-ad56-65e2c21079a4","9e488f88-2efe-4117-a604-8ccdb7c1018b","dac14e50-6117-456d-9f4f-2f11c27c9ebd","90079737-14e0-4cc4-8bbd-b9e93269d6de","291a653e-bc3a-4e84-a348-58fd01ffa023","83352290-e130-4b6f-b188-2c82577360ca","cf86149d-d625-401d-8197-59b3673f397f","fe546fd8-6dff-4379-8d33-13f9ebeb5a2e"]
+ l13:["a28ff754-6fe9-4a2f-b691-a59a1fd908ba","190af515-ede8-4a21-8d23-e6211131789f","a7b39e8b-7f51-4eef-948a-f4ed96b05d23","4897c9db-3a28-4326-a2fd-6169eb0f5ac3","0e8c1af2-3072-4d45-8220-12ae8a6ef0d4","18995cf2-54d6-4c78-8ea6-8164edee050e","c5d96d04-427e-40e2-a40f-67f17afcb8b4","9feada30-94f6-454d-878d-09698ebd16a6","f0717b64-be5e-47db-bd12-314b1a53f893","f7423009-c0e5-4d98-95a3-0c5444b0d1a8","5ba6b7d8-a670-4aac-b0f0-7e2d8232913a","823d5a9f-88af-42e2-871b-7d5b1c7cf411","d342652b-a707-439a-980e-6726f77cbd3b","8dcf7654-ffa5-462a-b40d-980fbde128c5","89d37e71-6d0e-44b1-8663-3ca5996706af","b547e662-c633-4e89-8cbc-b383bc4517c8","ff12bce8-af3f-4c44-a192-0f1f30da6f0a","d594ffe1-c83f-47e7-baff-233d84d136a5","69c7e130-a8eb-44ac-bbea-6cf520cb7733","a8db0eac-3ce7-492c-a322-94245d510307","397070a6-ddaf-40ea-9fce-70825f694c01","87c001e9-d245-4280-8b63-80fe8f57c34a","dcb3c2d4-4417-4524-ad56-65e2c21079a4","9e488f88-2efe-4117-a604-8ccdb7c1018b","dac14e50-6117-456d-9f4f-2f11c27c9ebd","90079737-14e0-4cc4-8bbd-b9e93269d6de","291a653e-bc3a-4e84-a348-58fd01ffa023","83352290-e130-4b6f-b188-2c82577360ca","cf86149d-d625-401d-8197-59b3673f397f","fe546fd8-6dff-4379-8d33-13f9ebeb5a2e"],
+ n23:["a60a8588-87f9-4db8-ba55-079b23af0fc4","14d7acb5-2507-4ec3-bb29-eeb0ceda8d0e","476c773b-196a-41c0-894f-7c9abdcb04e8","a6985466-2fcc-4874-b26a-b489e0ae4309","bb431ae1-7af7-4c3d-b461-e80146af775e","55d0a868-8841-43aa-90a7-5c2cbdcd8bf0"],
+ n24:["4401571a-b579-4318-81c1-bb80079a2498","8b335f00-d047-4306-83a8-10842543e408","c6a8f75d-1d8c-4de8-a642-fa5b9f91a79c","05200e5d-80d5-487c-98df-df57628631be","337ea73d-439d-477d-a668-07f3c8f54165","ff3df12b-cca0-4f53-9c91-8f736a6766f9"],
+ n25:["e828d1fd-c4f3-4e35-ac24-5f19298714af","67fb5f7c-5135-4230-9dea-4c90eab0ccae|png","651b6fd2-9e81-40b8-a2f4-3848c6d7dfe6","a9c247db-e8d9-4eef-ac4c-ea651fa309ae","edf020e2-0329-4b93-b518-f6af6f9c84ae","672507c5-1254-471c-bd6b-74a2c5000b67"]
 };
 function expandImg(u){
   if(u.startsWith("http"))return u;
@@ -404,9 +385,6 @@ LISTINGS.forEach(l=>{
     l.imgs=[...new Set(merged)];
   }
 });
-// l12: prefer the larger 640x480 images first, thumbnail last
-{const l12=LISTINGS.find(l=>l.id==="l12");
- if(l12)l12.imgs=[...l12.imgs.filter(u=>u.includes("640x480")),...l12.imgs.filter(u=>!u.includes("640x480"))];}
 
 let activeTab="buy", map, markerLayer;
 const $=id=>document.getElementById(id);
@@ -429,7 +407,7 @@ function filtered(){
     if(t&&l.type!==t)return false;
     if(k&&l.kc!==k)return false;
     if(p&&!(l.price!=null&&l.price<=+p))return false;
-    if(s){const hay=(l.name+" "+l.loc+" "+l.lineage+" "+l.notes+" "+l.source).toLowerCase();if(!hay.includes(s))return false;}
+    if(s){const hay=(l.name+" "+l.loc+" "+l.lineage+" "+l.notes+" "+l.source+" "+l.posted).toLowerCase();if(!hay.includes(s))return false;}
     return true;
   });
 }
@@ -522,8 +500,8 @@ function renderStats(){
   const dogs=RESCUES.reduce((a,r)=>a+r.dogs.filter(d=>d.img).length,0);
   $("statsbar").innerHTML=`
     <div class="stat"><b>${LISTINGS.length}</b><span>Litters found</span></div>
+    <div class="stat"><b>${dec}</b><span>December-ready litters</span></div>
     <div class="stat"><b>${totalPups}</b><span>Puppies available</span></div>
-    <div class="stat"><b>${dec}</b><span>🎄 December-ready litters</span></div>
     <div class="stat"><b>${kc}</b><span>KC-registered litters</span></div>
     <div class="stat"><b>£${avg.toLocaleString("en-GB")}</b><span>Avg advertised price</span></div>
     <div class="stat"><b>${RESCUES.length}</b><span>Rescue centres</span></div>
@@ -535,7 +513,7 @@ function renderMap(items){
   markerLayer=L.layerGroup().addTo(map);
   items.forEach(it=>{
     const m=L.circleMarker([it.lat,it.lng],{radius:10,color:"#fff",weight:2,fillColor:pinColor(it),fillOpacity:.95}).addTo(markerLayer);
-    const price=it.cat==="buy"?`<br>💷 ${fmtPrice(it.price)} · 🐶 ${it.pups} available`:`<br>💷 ${it.fee}`;
+    const price=it.cat==="buy"?`<br>💷 ${fmtPrice(it.price)} · 🐶 ${it.pups} available${it.dec?" · 🎄 Dec-ready":""}`:`<br>💷 ${it.fee}`;
     m.bindPopup(`<b>${it.name}</b><br>📍 ${it.loc}${price}<br><a href="#" onclick="jumpToCard('${it.id}');return false;">View details ↓</a> · <a href="${it.url}" target="_blank" rel="noopener">Open listing ↗</a>`);
   });
 }
